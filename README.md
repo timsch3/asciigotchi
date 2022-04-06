@@ -7,5 +7,6 @@ Check it out here: https://timschilling.net/asciigotchi/
 
 ## Possible future features
 
-- Sick state after not caring for too long
-- Hatching and dying
+- Sick state and dying after not caring for too long
+- Dark mode
+- Pet getting bigger the older it gets

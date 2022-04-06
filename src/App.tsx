@@ -6,16 +6,17 @@ import moods from './lib/moods';
 import { intervals, getNow } from './lib/intervals';
 import { save, load } from './lib/storage';
 import { useElapsedTime } from 'use-elapsed-time';
-import ResetButton from './components/ResetButton';
+import TopBar from './components/TopBar';
 
 function App() {
+  const [birthTime, setBirthTime] = useState(load('birthTime'));
   const [age, setAge] = useState(0);
   const [mood, setMood] = useState(moods.unborn);
   const [justReceived, setJustReceived] = useState(false);
 
-  let lastFed = load('lastFed') || getNow();
-  let lastPetted = load('lastPetted') || getNow();
-  let lastCleaned = load('lastCleaned') || getNow();
+  const [lastFed, setLastFed] = useState(load('lastFed') || getNow());
+  const [lastPetted, setLastPetted] = useState(load('lastPetted') || getNow());
+  const [lastCleaned, setLastCleaned] = useState(load('lastCleaned') || getNow());
 
   // use to trigger useEffect every second
   const { elapsedTime } = useElapsedTime({
@@ -24,6 +25,10 @@ function App() {
   });
 
   useEffect(() => {
+    // check if already hatched
+    if (birthTime === undefined) return;
+    // track age
+    setAge(getNow() - birthTime);
     // just reveived cooldown
     if (justReceived) {
       setJustReceived(false);
@@ -56,14 +61,17 @@ function App() {
 
   return (
     <div className="App">
-      <ResetButton />
+      <TopBar setMood={setMood} age={age} setBirthTime={setBirthTime} />
       <Pet mood={mood} />
       <ActionsMenu
+        birthTime={birthTime}
+        setBirthTime={setBirthTime}
+        setAge={setAge}
         setMood={setMood}
         setJustReceived={setJustReceived}
-        lastFed={lastFed}
-        lastPetted={lastPetted}
-        lastCleaned={lastCleaned}
+        setLastFed={setLastFed}
+        setLastPetted={setLastPetted}
+        setLastCleaned={setLastCleaned}
       />
     </div>
   );

@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  font-family: sans-serif;
+  font-family: monospace;
 }
 
 .petContainer {
@@ -15,6 +15,7 @@
   font-size: 4.2rem;
   animation: wobble 3s ease-in-out infinite;
   user-select: none;
+  font-family: sans-serif;
 }
 
 button:not(:last-of-type) {
@@ -31,9 +32,10 @@ button {
   font-family: monospace;
 }
 
-.resetButtonContainer {
+.topBar {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #resetButton {
@@ -41,6 +43,13 @@ button {
   font-size: 0.75rem;
   border-width: 2px;
   font-weight: bold;
+}
+
+#age {
+  font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0.25rem;
 }
 
 @keyframes wobble {
