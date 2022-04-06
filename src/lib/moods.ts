@@ -1,4 +1,5 @@
 const moods = {
+  unborn: '0',
   happy: '(◠‿◠)',
   hungry: '(Ծ ‸ Ծ)',
   fed: 'ʘ O ʘ',

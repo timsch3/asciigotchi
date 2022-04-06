@@ -5,24 +5,24 @@ import moods from '../lib/moods';
 interface ActionsMenuProps {
   setMood: (a: string) => void;
   setJustReceived: (a: boolean) => void;
-  setLastFed: (a: number) => void;
-  setLastPetted: (a: number) => void;
-  setLastCleaned: (a: number) => void;
+  lastFed: number;
+  lastPetted: number;
+  lastCleaned: number;
 }
 
 const ActionsMenu: FunctionComponent<ActionsMenuProps> = ({
   setMood,
   setJustReceived,
-  setLastFed,
-  setLastPetted,
-  setLastCleaned,
+  lastFed,
+  lastPetted,
+  lastCleaned,
 }) => {
   return (
     <div className="actionsMenu">
       <button
         className="actionsMenuButton"
         onClick={() => {
-          setLastFed(getNow());
+          lastFed = getNow();
           setMood(moods.fed);
           setJustReceived(true);
         }}
@@ -32,7 +32,7 @@ const ActionsMenu: FunctionComponent<ActionsMenuProps> = ({
       <button
         className="actionsMenuButton"
         onClick={() => {
-          setLastPetted(getNow());
+          lastPetted = getNow();
           setMood(moods.petted);
           setJustReceived(true);
         }}
@@ -42,7 +42,7 @@ const ActionsMenu: FunctionComponent<ActionsMenuProps> = ({
       <button
         className="actionsMenuButton"
         onClick={() => {
-          setLastCleaned(getNow());
+          lastCleaned = getNow();
           setMood(moods.cleaned);
           setJustReceived(true);
         }}

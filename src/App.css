@@ -6,14 +6,15 @@
 .petContainer {
   display: flex;
   justify-content: center;
-  min-height: 50vh;
+  min-height: 40vh;
 }
 
 .pet {
-  margin: 10vh;
+  margin-top: 10vh;
   padding-bottom: 15px;
   font-size: 5rem;
   animation: wobble 3s ease-in-out infinite;
+  user-select: none;
 }
 
 button:not(:last-of-type) {
@@ -23,6 +24,10 @@ button:not(:last-of-type) {
 button {
   padding: 0.25rem 0.5rem;
   font-size: 1.5rem;
+  border-width: 4px;
+  border-radius: 1.75rem;
+  background-color: white;
+  user-select: none;
 }
 
 @keyframes wobble {

@@ -8,11 +8,12 @@ import { save, load } from './lib/storage';
 import { useElapsedTime } from 'use-elapsed-time';
 
 function App() {
-  const [mood, setMood] = useState(moods.happy);
+  const [mood, setMood] = useState(moods.unborn);
   const [justReceived, setJustReceived] = useState(false);
-  const [lastFed, setLastFed] = useState(load('lastFed') || getNow());
-  const [lastPetted, setLastPetted] = useState(load('lastPetted') || getNow());
-  const [lastCleaned, setLastCleaned] = useState(load('lastCleaned') || getNow());
+
+  let lastFed = load('lastFed') || getNow();
+  let lastPetted = load('lastPetted') || getNow();
+  let lastCleaned = load('lastCleaned') || getNow();
 
   // use to trigger useEffect every second
   const { elapsedTime } = useElapsedTime({
@@ -57,9 +58,9 @@ function App() {
       <ActionsMenu
         setMood={setMood}
         setJustReceived={setJustReceived}
-        setLastFed={setLastFed}
-        setLastPetted={setLastPetted}
-        setLastCleaned={setLastCleaned}
+        lastFed={lastFed}
+        lastPetted={lastPetted}
+        lastCleaned={lastCleaned}
       ></ActionsMenu>
     </div>
   );
