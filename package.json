@@ -1,7 +1,8 @@
 {
-  "name": "localgotchi",
-  "version": "0.1.0",
+  "name": "asciigotchi",
+  "version": "1.0.0",
   "private": true,
+  "homepage": "https://timschilling.net/asciigotchi",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
@@ -14,6 +15,7 @@
     "react-dom": "^18.0.0",
     "react-scripts": "5.0.0",
     "typescript": "^4.6.3",
+    "use-elapsed-time": "^3.0.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
