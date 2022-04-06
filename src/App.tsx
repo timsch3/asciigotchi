@@ -6,8 +6,10 @@ import moods from './lib/moods';
 import { intervals, getNow } from './lib/intervals';
 import { save, load } from './lib/storage';
 import { useElapsedTime } from 'use-elapsed-time';
+import ResetButton from './components/ResetButton';
 
 function App() {
+  const [age, setAge] = useState(0);
   const [mood, setMood] = useState(moods.unborn);
   const [justReceived, setJustReceived] = useState(false);
 
@@ -54,14 +56,15 @@ function App() {
 
   return (
     <div className="App">
-      <Pet mood={mood}></Pet>
+      <ResetButton />
+      <Pet mood={mood} />
       <ActionsMenu
         setMood={setMood}
         setJustReceived={setJustReceived}
         lastFed={lastFed}
         lastPetted={lastPetted}
         lastCleaned={lastCleaned}
-      ></ActionsMenu>
+      />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 export const intervals = {
-  hunger: 18000,
-  loneliness: 27000,
-  dirtiness: 43200,
+  hunger: 5, // 5 hours: 18000
+  loneliness: 7, // 7.5 hours: 27000
+  dirtiness: 10, // 12 hours 43200
 };
 
 export const getNow = () => {

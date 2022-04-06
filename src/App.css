@@ -12,22 +12,35 @@
 .pet {
   margin-top: 10vh;
   padding-bottom: 15px;
-  font-size: 5rem;
+  font-size: 4.2rem;
   animation: wobble 3s ease-in-out infinite;
   user-select: none;
 }
 
 button:not(:last-of-type) {
-  margin-right: 1rem;
+  margin-right: 0.75rem;
 }
 
 button {
-  padding: 0.25rem 0.5rem;
-  font-size: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.25rem;
   border-width: 4px;
   border-radius: 1.75rem;
   background-color: white;
   user-select: none;
+  font-family: monospace;
+}
+
+.resetButtonContainer {
+  display: flex;
+  justify-content: end;
+}
+
+#resetButton {
+  padding: 0.2rem 0.4rem;
+  font-size: 0.75rem;
+  border-width: 2px;
+  font-weight: bold;
 }
 
 @keyframes wobble {
