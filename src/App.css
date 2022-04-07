@@ -30,6 +30,8 @@ body {
   border-width: 2px;
   font-weight: bold;
   min-width: auto;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 #uiContainer {
