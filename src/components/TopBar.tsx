@@ -24,7 +24,7 @@ const TopBar: FunctionComponent<TopBarProps> = ({
 }) => {
   // dark mode
   const [darkmodeIcon, setDarkmodeIcon] = useState(load('darkmode') === 1 ? '🌞' : '🌛' || '🌛');
-  const handleDarkmode = () => {
+  const handleDarkmodeSwitch = () => {
     load('darkmode') === 1 ? setLightTheme() : setDarkTheme();
   };
   const setLightTheme = () => {
@@ -44,7 +44,7 @@ const TopBar: FunctionComponent<TopBarProps> = ({
     save('darkmode', 1);
   };
   useEffect(() => {
-    handleDarkmode();
+    load('darkmode') === 1 ? setDarkTheme() : setLightTheme(); // initially load darkmode setting
   }, []);
   // set needs levels for ui
   let hungerLevel = [];
@@ -92,7 +92,7 @@ const TopBar: FunctionComponent<TopBarProps> = ({
             </tbody>
           </table>
         </span>
-        <button id="darkmodeSwitch" onClick={() => handleDarkmode()}>
+        <button id="darkmodeSwitch" onClick={() => handleDarkmodeSwitch()}>
           {darkmodeIcon}
         </button>
         <button
