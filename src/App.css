@@ -100,33 +100,33 @@ button {
     transform: translateX(0);
   }
   10% {
-    transform: translateX(-0.5rem);
+    transform: translateX(-0.25rem);
   }
   20% {
-    transform: translateX(0.5rem);
+    transform: translateX(0.25rem);
   }
   30% {
-    transform: translateX(-0.5rem);
+    transform: translateX(0);
   }
   40% {
-    transform: translateX(0.5rem);
+    transform: translateX(0.25rem);
   }
   50% {
-    transform: translateX(-0.5rem);
+    transform: translateX(-0.25rem);
   }
   60% {
-    transform: translateX(0.5rem);
+    transform: translateX(0.25rem);
   }
   70% {
-    transform: translateX(-0.5rem);
+    transform: translateX(-0.25rem);
   }
   80% {
-    transform: translateX(0.5rem);
+    transform: translateX(0.25rem);
   }
   90% {
-    transform: translateX(-0.5rem);
+    transform: translateX(-0.25rem);
   }
   100% {
-    transform: translateX(0.5rem);
+    transform: translateX(0.25rem);
   }
 }
