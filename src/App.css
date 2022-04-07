@@ -106,7 +106,7 @@ button {
     transform: translateX(0.5rem);
   }
   30% {
-    transform: translateX(-0.5rem);
+    transform: translateX(0);
   }
   40% {
     transform: translateX(0.5rem);
