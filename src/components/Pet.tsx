@@ -7,7 +7,7 @@ interface PetProps {
 const Pet: FunctionComponent<PetProps> = ({ mood }) => {
   return (
     <div className="petContainer">
-      <div className="pet">{mood}</div>
+      <div id="pet">{mood}</div>
     </div>
   );
 };

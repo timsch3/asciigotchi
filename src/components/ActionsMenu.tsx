@@ -24,6 +24,17 @@ const ActionsMenu: FunctionComponent<ActionsMenuProps> = ({
   setLastPetted,
   setLastCleaned,
 }) => {
+  const handleHatch = () => {
+    setMood(moods.hatching);
+    document.getElementById('pet')!.style.animation = 'hatch 2s ease-in-out infinite';
+    setBirthTime(getNow());
+    save('birthTime', getNow());
+    setAge(1);
+    setLastFed(getNow() - (intervals.hunger + 1));
+    setLastPetted(getNow() - (intervals.loneliness + 1));
+    setLastCleaned(getNow() - (intervals.dirtiness + 1));
+    setJustReceived(true);
+  };
   if (birthTime !== undefined) {
     return (
       <div className="actionsMenu">
@@ -61,13 +72,7 @@ const ActionsMenu: FunctionComponent<ActionsMenuProps> = ({
       <div className="actionsMenu">
         <button
           onClick={() => {
-            setMood(moods.hatching);
-            setBirthTime(getNow());
-            save('birthTime', getNow());
-            setAge(1);
-            setLastFed(getNow() - (intervals.hunger + 1));
-            setLastPetted(getNow() - (intervals.loneliness + 1));
-            setLastCleaned(getNow() - (intervals.dirtiness + 1));
+            handleHatch();
           }}
         >
           Hatch

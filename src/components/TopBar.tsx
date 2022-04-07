@@ -4,18 +4,20 @@ import { reset, load, save } from '../lib/storage';
 import { getHunger, getLoneliness, getDirtiness } from '../lib/intervals';
 
 interface TopBarProps {
+  birthTime: number | undefined;
+  setBirthTime: (a: number | undefined) => void;
   setMood: (a: string) => void;
   age: number;
-  setBirthTime: (a: number | undefined) => void;
   lastFed: number;
   lastPetted: number;
   lastCleaned: number;
 }
 
 const TopBar: FunctionComponent<TopBarProps> = ({
+  birthTime,
+  setBirthTime,
   setMood,
   age,
-  setBirthTime,
   lastFed,
   lastCleaned,
   lastPetted,
@@ -60,43 +62,47 @@ const TopBar: FunctionComponent<TopBarProps> = ({
       reset();
     }
   };
-  return (
-    <div id="topBar">
-      <span id="uiContainer">
-        <table cellSpacing={0}>
-          <tbody>
-            <tr>
-              <th>Age:&nbsp;</th>
-              <td>{(age / 86400).toFixed(1)} days&nbsp;</td>
-            </tr>
-            <tr>
-              <th>Hunger:&nbsp;</th>
-              <td>{hungerLevel.join(' ')}</td>
-            </tr>
-            <tr>
-              <th>Loneliness:&nbsp;</th>
-              <td>{lonelinessLevel.join(' ')}</td>
-            </tr>
-            <tr>
-              <th>Dirtiness:&nbsp;</th>
-              <td>{dirtinessLevel.join(' ')}</td>
-            </tr>
-          </tbody>
-        </table>
-      </span>
-      <button id="darkmodeSwitch" onClick={() => handleDarkmodeSwitch()}>
-        {darkmodeIcon}
-      </button>
-      <button
-        id="resetButton"
-        onClick={() => {
-          handleReset();
-        }}
-      >
-        RESET
-      </button>
-    </div>
-  );
+  if (birthTime !== undefined) {
+    return (
+      <div id="topBar">
+        <span id="uiContainer">
+          <table cellSpacing={0}>
+            <tbody>
+              <tr>
+                <th>Age:&nbsp;</th>
+                <td>{(age / 86400).toFixed(1)} days&nbsp;</td>
+              </tr>
+              <tr>
+                <th>Hunger:&nbsp;</th>
+                <td>{hungerLevel.join(' ')}</td>
+              </tr>
+              <tr>
+                <th>Loneliness:&nbsp;</th>
+                <td>{lonelinessLevel.join(' ')}</td>
+              </tr>
+              <tr>
+                <th>Dirtiness:&nbsp;</th>
+                <td>{dirtinessLevel.join(' ')}</td>
+              </tr>
+            </tbody>
+          </table>
+        </span>
+        <button id="darkmodeSwitch" onClick={() => handleDarkmodeSwitch()}>
+          {darkmodeIcon}
+        </button>
+        <button
+          id="resetButton"
+          onClick={() => {
+            handleReset();
+          }}
+        >
+          RESET
+        </button>
+      </div>
+    );
+  } else {
+    return <div id="topBar"></div>;
+  }
 };
 
 export default TopBar;

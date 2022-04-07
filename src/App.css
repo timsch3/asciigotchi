@@ -21,6 +21,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  min-height: calc(4.8rem + 2px);
 }
 
 #resetButton,
@@ -50,7 +51,7 @@ body {
   min-height: 40vh;
 }
 
-.pet {
+#pet {
   margin-top: 10vh;
   padding-bottom: 15px;
   font-size: 4.2rem;
@@ -91,5 +92,41 @@ button {
   }
   100% {
     transform: scale(1, 1);
+  }
+}
+
+@keyframes hatch {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(-0.5rem);
+  }
+  20% {
+    transform: translateX(0.5rem);
+  }
+  30% {
+    transform: translateX(-0.5rem);
+  }
+  40% {
+    transform: translateX(0.5rem);
+  }
+  50% {
+    transform: translateX(-0.5rem);
+  }
+  60% {
+    transform: translateX(0.5rem);
+  }
+  70% {
+    transform: translateX(-0.5rem);
+  }
+  80% {
+    transform: translateX(0.5rem);
+  }
+  90% {
+    transform: translateX(-0.5rem);
+  }
+  100% {
+    transform: translateX(0.5rem);
   }
 }

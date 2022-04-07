@@ -34,6 +34,7 @@ function App() {
       setJustReceived(false);
       return;
     }
+    document.getElementById('pet')!.removeAttribute('style'); // reset hatching animation
     // set mood
     setMood(moods.happy);
     if (getIsHungry(lastFed)) {
@@ -56,9 +57,10 @@ function App() {
   return (
     <div className="App">
       <TopBar
+        birthTime={birthTime}
+        setBirthTime={setBirthTime}
         setMood={setMood}
         age={age}
-        setBirthTime={setBirthTime}
         lastFed={lastFed}
         lastPetted={lastPetted}
         lastCleaned={lastCleaned}
