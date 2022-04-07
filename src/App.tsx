@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import ActionsMenu from './components/ActionsMenu';
 import Pet from './components/Pet';
 import moods from './lib/moods';
-import { intervals, getNow } from './lib/intervals';
+import { getNow, getIsHungry, getIsLonely, getIsDirty } from './lib/intervals';
 import { save, load } from './lib/storage';
 import { useElapsedTime } from 'use-elapsed-time';
 import TopBar from './components/TopBar';
@@ -34,23 +34,17 @@ function App() {
       setJustReceived(false);
       return;
     }
-    // check needs and set mood
+    // set mood
     setMood(moods.happy);
-    let hungry = false,
-      lonely = false,
-      dirty = false;
-    if (getNow() - lastFed > intervals.hunger) hungry = true;
-    if (getNow() - lastPetted > intervals.loneliness) lonely = true;
-    if (getNow() - lastCleaned > intervals.dirtiness) dirty = true;
-    if (hungry) {
+    if (getIsHungry(lastFed)) {
       setMood(moods.hungry);
-      if (lonely && dirty) setMood(moods.hungryLonelyAndDirty);
-      else if (lonely) setMood(moods.hungryAndLonely);
-      else if (dirty) setMood(moods.hungryAndDirty);
-    } else if (lonely) {
+      if (getIsLonely(lastPetted) && getIsDirty(lastFed)) setMood(moods.hungryLonelyAndDirty);
+      else if (getIsLonely(lastPetted)) setMood(moods.hungryAndLonely);
+      else if (getIsDirty(lastCleaned)) setMood(moods.hungryAndDirty);
+    } else if (getIsLonely(lastPetted)) {
       setMood(moods.lonely);
-      if (dirty) setMood(moods.lonelyAndDirty);
-    } else if (dirty) {
+      if (getIsDirty(lastCleaned)) setMood(moods.lonelyAndDirty);
+    } else if (getIsDirty(lastCleaned)) {
       setMood(moods.dirty);
     }
     // save states
@@ -61,7 +55,14 @@ function App() {
 
   return (
     <div className="App">
-      <TopBar setMood={setMood} age={age} setBirthTime={setBirthTime} />
+      <TopBar
+        setMood={setMood}
+        age={age}
+        setBirthTime={setBirthTime}
+        lastFed={lastFed}
+        lastPetted={lastPetted}
+        lastCleaned={lastCleaned}
+      />
       <Pet mood={mood} />
       <ActionsMenu
         birthTime={birthTime}

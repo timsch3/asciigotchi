@@ -3,6 +3,30 @@
   font-family: monospace;
 }
 
+/* ============================================== */
+
+#topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#resetButton {
+  padding: 0.2rem 0.4rem;
+  font-size: 0.75rem;
+  border-width: 2px;
+  font-weight: bold;
+}
+
+#uiContainer {
+  padding: 0 0.25rem 0.25rem 0;
+  text-align: left;
+  border-right: 2px solid #ddd;
+  border-bottom: 2px solid #ddd;
+}
+
+/* ============================================== */
+
 .petContainer {
   display: flex;
   justify-content: center;
@@ -18,6 +42,8 @@
   font-family: sans-serif;
 }
 
+/* ============================================== */
+
 button:not(:last-of-type) {
   margin-right: 0.75rem;
 }
@@ -32,25 +58,7 @@ button {
   font-family: monospace;
 }
 
-.topBar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#resetButton {
-  padding: 0.2rem 0.4rem;
-  font-size: 0.75rem;
-  border-width: 2px;
-  font-weight: bold;
-}
-
-#age {
-  font-size: 1rem;
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 0.25rem;
-}
+/* ============================================== */
 
 @keyframes wobble {
   0% {
