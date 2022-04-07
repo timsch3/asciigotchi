@@ -22,20 +22,22 @@ const TopBar: FunctionComponent<TopBarProps> = ({
   lastCleaned,
   lastPetted,
 }) => {
-  // set dark mode
+  // dark mode
   const darkmodeActive = load('darkmode');
   const [darkmodeIcon, setDarkmodeIcon] = useState(darkmodeActive === 1 ? '🌞' : '🌛' || '🌛');
   const handleDarkmodeSwitch = () => {
     const r: HTMLElement = document.querySelector(':root')!;
     if (darkmodeActive === 1) {
+      // light mode css:
       r.style.setProperty('--mainClr', 'hsl(0, 0%, 10%');
       r.style.setProperty('--softClr', 'hsl(0, 0%, 85%');
       r.style.setProperty('--bgClr', 'hsl(0, 0%, 98%');
       setDarkmodeIcon('🌛');
       save('darkmode', 0);
     } else {
+      // dark mode css:
       r.style.setProperty('--mainClr', 'hsl(0, 0%, 90%');
-      r.style.setProperty('--softClr', 'hsl(0, 0%, 15%');
+      r.style.setProperty('--softClr', 'hsl(0, 0%, 20%');
       r.style.setProperty('--bgClr', 'hsl(0, 0%, 2%');
       setDarkmodeIcon('🌞');
       save('darkmode', 1);
