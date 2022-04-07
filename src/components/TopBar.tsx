@@ -52,6 +52,14 @@ const TopBar: FunctionComponent<TopBarProps> = ({
   for (let i = 0.0; i < getDirtiness(lastCleaned); i++) {
     dirtinessLevel.push('█');
   }
+  // reset pet
+  const handleReset = () => {
+    if (window.confirm('Do you really want to reset your asciigotchi?')) {
+      setBirthTime(undefined);
+      setMood(moods.unborn);
+      reset();
+    }
+  };
   return (
     <div id="topBar">
       <span id="uiContainer">
@@ -82,9 +90,7 @@ const TopBar: FunctionComponent<TopBarProps> = ({
       <button
         id="resetButton"
         onClick={() => {
-          setBirthTime(undefined);
-          setMood(moods.unborn);
-          reset();
+          handleReset();
         }}
       >
         RESET
