@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from 'react';
+import { FunctionComponent, useState, useEffect } from 'react';
 import moods from '../lib/moods';
 import { reset, load, save } from '../lib/storage';
 import { getHunger, getLoneliness, getDirtiness } from '../lib/intervals';
@@ -23,7 +23,7 @@ const TopBar: FunctionComponent<TopBarProps> = ({
   lastPetted,
 }) => {
   // dark mode
-  const darkmodeActive = load('darkmode');
+  let darkmodeActive = load('darkmode');
   const [darkmodeIcon, setDarkmodeIcon] = useState(darkmodeActive === 1 ? '🌞' : '🌛' || '🌛');
   const handleDarkmodeSwitch = () => {
     const r: HTMLElement = document.querySelector(':root')!;
@@ -43,6 +43,10 @@ const TopBar: FunctionComponent<TopBarProps> = ({
       save('darkmode', 1);
     }
   };
+  useEffect(() => {
+    darkmodeActive = load('darkmode');
+    handleDarkmodeSwitch();
+  }, []);
   // set needs levels for ui
   let hungerLevel = [];
   for (let i = 0.0; i < getHunger(lastFed); i++) {
