@@ -23,29 +23,28 @@ const TopBar: FunctionComponent<TopBarProps> = ({
   lastPetted,
 }) => {
   // dark mode
-  let darkmodeActive = load('darkmode');
-  const [darkmodeIcon, setDarkmodeIcon] = useState(darkmodeActive === 1 ? '🌞' : '🌛' || '🌛');
-  const handleDarkmodeSwitch = () => {
+  const [darkmodeIcon, setDarkmodeIcon] = useState(load('darkmode') === 1 ? '🌞' : '🌛' || '🌛');
+  const handleDarkmode = () => {
+    load('darkmode') === 1 ? setLightTheme() : setDarkTheme();
+  };
+  const setLightTheme = () => {
     const r: HTMLElement = document.querySelector(':root')!;
-    if (darkmodeActive === 1) {
-      // light mode css:
-      r.style.setProperty('--mainClr', 'hsl(0, 0%, 10%');
-      r.style.setProperty('--softClr', 'hsl(0, 0%, 85%');
-      r.style.setProperty('--bgClr', 'hsl(0, 0%, 98%');
-      setDarkmodeIcon('🌛');
-      save('darkmode', 0);
-    } else {
-      // dark mode css:
-      r.style.setProperty('--mainClr', 'hsl(0, 0%, 90%');
-      r.style.setProperty('--softClr', 'hsl(0, 0%, 20%');
-      r.style.setProperty('--bgClr', 'hsl(0, 0%, 2%');
-      setDarkmodeIcon('🌞');
-      save('darkmode', 1);
-    }
+    r.style.setProperty('--mainClr', 'hsl(0, 0%, 10%');
+    r.style.setProperty('--softClr', 'hsl(0, 0%, 85%');
+    r.style.setProperty('--bgClr', 'hsl(0, 0%, 98%');
+    setDarkmodeIcon('🌛');
+    save('darkmode', 0);
+  };
+  const setDarkTheme = () => {
+    const r: HTMLElement = document.querySelector(':root')!;
+    r.style.setProperty('--mainClr', 'hsl(0, 0%, 90%');
+    r.style.setProperty('--softClr', 'hsl(0, 0%, 20%');
+    r.style.setProperty('--bgClr', 'hsl(0, 0%, 2%');
+    setDarkmodeIcon('🌞');
+    save('darkmode', 1);
   };
   useEffect(() => {
-    darkmodeActive = load('darkmode');
-    handleDarkmodeSwitch();
+    handleDarkmode();
   }, []);
   // set needs levels for ui
   let hungerLevel = [];
@@ -93,7 +92,7 @@ const TopBar: FunctionComponent<TopBarProps> = ({
             </tbody>
           </table>
         </span>
-        <button id="darkmodeSwitch" onClick={() => handleDarkmodeSwitch()}>
+        <button id="darkmodeSwitch" onClick={() => handleDarkmode()}>
           {darkmodeIcon}
         </button>
         <button
