@@ -1,6 +1,18 @@
+:root {
+  --mainClr: hsl(0, 0%, 10%);
+  --softClr: hsl(0, 0%, 85%);
+  --bgClr: hsl(0, 0%, 98%);
+}
+
+body {
+  background-color: var(--bgClr);
+}
+
 .App {
   text-align: center;
   font-family: monospace;
+  color: var(--mainClr);
+  background-color: var(--bgClr);
 }
 
 /* ============================================== */
@@ -11,18 +23,21 @@
   align-items: flex-start;
 }
 
-#resetButton {
+#resetButton,
+#darkmodeSwitch {
   padding: 0.2rem 0.4rem;
   font-size: 0.75rem;
   border-width: 2px;
   font-weight: bold;
+  min-width: auto;
 }
 
 #uiContainer {
   padding: 0 0.25rem 0.25rem 0;
   text-align: left;
-  border-right: 2px solid #ddd;
-  border-bottom: 2px solid #ddd;
+  border-right: 2px solid var(--softClr);
+  border-bottom: 2px solid var(--softClr);
+  line-height: 1.1rem;
 }
 
 /* ============================================== */
@@ -40,6 +55,8 @@
   animation: wobble 3s ease-in-out infinite;
   user-select: none;
   font-family: sans-serif;
+  -webkit-filter: grayscale(100%); /* workaround for heart symbols rendering as emoji */
+  filter: grayscale(100%);
 }
 
 /* ============================================== */
@@ -49,13 +66,16 @@ button:not(:last-of-type) {
 }
 
 button {
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0;
+  margin-bottom: 0.5rem;
   font-size: 1.25rem;
   border-width: 4px;
   border-radius: 1.75rem;
-  background-color: white;
+  color: var(--mainClr);
+  background-color: var(--bgClr);
   user-select: none;
   font-family: monospace;
+  min-width: 8ch;
 }
 
 /* ============================================== */

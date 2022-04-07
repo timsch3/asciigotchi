@@ -1,4 +1,4 @@
-let allItems = new Set<string>();
+let allItems = new Set<string>(); // for resetting only asciigotchi local storage data
 
 export const save = (name: string, value: number) => {
   localStorage.setItem(`asciigotchi-${name}`, String(value));
