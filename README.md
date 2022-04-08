@@ -10,7 +10,8 @@ Check it out here: https://timschilling.net/asciigotchi/
 - Dark mode ✔
 - UI showing needs ✔
 
-## Possible future features
+## Planned features
 
 - Sick state and dying after not caring for too long
 - Pet getting bigger the older it gets
+- Improve UI to better show need levels
