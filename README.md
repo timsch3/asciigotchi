@@ -15,3 +15,4 @@ Check it out here: https://timschilling.net/asciigotchi/
 - Sick state and dying after not caring for too long
 - Pet getting bigger the older it gets
 - Improve UI to better show need levels
+- Add need to sleep and couple with darkmode
