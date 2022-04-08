@@ -57,7 +57,7 @@ function App() {
   return (
     <div className="App">
       <TopBar
-        birthTime={birthTime}
+        mood={mood}
         setBirthTime={setBirthTime}
         setMood={setMood}
         age={age}
@@ -67,7 +67,7 @@ function App() {
       />
       <Pet mood={mood} />
       <ActionsMenu
-        birthTime={birthTime}
+        mood={mood}
         setBirthTime={setBirthTime}
         setAge={setAge}
         setMood={setMood}

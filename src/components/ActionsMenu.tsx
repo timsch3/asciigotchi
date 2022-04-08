@@ -4,7 +4,7 @@ import moods from '../lib/moods';
 import { save } from '../lib/storage';
 
 interface ActionsMenuProps {
-  birthTime: number | undefined;
+  mood: string;
   setBirthTime: (a: number) => void;
   setAge: (a: number) => void;
   setMood: (a: string) => void;
@@ -15,7 +15,7 @@ interface ActionsMenuProps {
 }
 
 const ActionsMenu: FunctionComponent<ActionsMenuProps> = ({
-  birthTime,
+  mood,
   setBirthTime,
   setAge,
   setMood,
@@ -25,17 +25,23 @@ const ActionsMenu: FunctionComponent<ActionsMenuProps> = ({
   setLastCleaned,
 }) => {
   const handleHatch = () => {
+    if (mood === moods.hatching) return;
     setMood(moods.hatching);
     document.getElementById('pet')!.style.animation = 'hatch 2s ease-in-out infinite';
     setBirthTime(getNow());
     save('birthTime', getNow());
-    setAge(1);
     setLastFed(getNow() - (intervals.hunger + 1));
     setLastPetted(getNow() - (intervals.loneliness + 1));
     setLastCleaned(getNow() - (intervals.dirtiness + 1));
     setJustReceived(true);
   };
-  if (birthTime !== undefined) {
+  if (mood == moods.unborn || mood == moods.hatching) {
+    return (
+      <div className="actionsMenu">
+        <button onClick={handleHatch}>Hatch</button>
+      </div>
+    );
+  } else {
     return (
       <div className="actionsMenu">
         <button
@@ -64,18 +70,6 @@ const ActionsMenu: FunctionComponent<ActionsMenuProps> = ({
           }}
         >
           Clean
-        </button>
-      </div>
-    );
-  } else {
-    return (
-      <div className="actionsMenu">
-        <button
-          onClick={() => {
-            handleHatch();
-          }}
-        >
-          Hatch
         </button>
       </div>
     );

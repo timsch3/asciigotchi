@@ -4,9 +4,9 @@ import { reset, load, save } from '../lib/storage';
 import { getHunger, getLoneliness, getDirtiness } from '../lib/intervals';
 
 interface TopBarProps {
-  birthTime: number | undefined;
   setBirthTime: (a: number | undefined) => void;
   setMood: (a: string) => void;
+  mood: string;
   age: number;
   lastFed: number;
   lastPetted: number;
@@ -14,9 +14,9 @@ interface TopBarProps {
 }
 
 const TopBar: FunctionComponent<TopBarProps> = ({
-  birthTime,
   setBirthTime,
   setMood,
+  mood,
   age,
   lastFed,
   lastCleaned,
@@ -67,7 +67,9 @@ const TopBar: FunctionComponent<TopBarProps> = ({
       reset();
     }
   };
-  if (birthTime !== undefined) {
+  if (mood == moods.unborn || mood == moods.hatching) {
+    return <div id="topBar"></div>;
+  } else {
     return (
       <div id="topBar">
         <span id="uiContainer">
@@ -105,8 +107,6 @@ const TopBar: FunctionComponent<TopBarProps> = ({
         </button>
       </div>
     );
-  } else {
-    return <div id="topBar"></div>;
   }
 };
 
