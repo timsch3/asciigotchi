@@ -1,9 +1,9 @@
 export const intervals = {
   // change for testing
-  hunger: 5, // 5 hours: 18000
-  loneliness: 7.5, // 7.5 hours: 27000
-  dirtiness: 12, // 12 hours: 43200
-  health: 10, // 10 hours: 36000
+  hunger: 18000, // 5 hours: 18000
+  loneliness: 27000, // 7.5 hours: 27000
+  dirtiness: 43200, // 12 hours: 43200
+  health: 36000, // 10 hours: 36000
 };
 
 export const getNow = () => {

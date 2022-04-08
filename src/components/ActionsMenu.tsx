@@ -33,10 +33,10 @@ const ActionsMenu: FunctionComponent<ActionsMenuProps> = ({
     document.getElementById('pet')!.style.animation = 'hatch 2s ease-in-out infinite';
     setBirthTime(getNow());
     save('birthTime', getNow());
-    setLastFed(getNow() - intervals.hunger / 2);
-    setLastPetted(getNow() - intervals.loneliness / 2);
-    setLastCleaned(getNow() - intervals.dirtiness / 2);
-    setLastHealthy(getNow() - intervals.health / 2);
+    setLastFed(getNow() - intervals.hunger / 1.1);
+    setLastPetted(getNow() - intervals.loneliness / 1.1);
+    setLastCleaned(getNow() - intervals.dirtiness / 1.1);
+    setLastHealthy(getNow() - intervals.health / 1.1);
     setJustReceived(true);
   };
   // actions
