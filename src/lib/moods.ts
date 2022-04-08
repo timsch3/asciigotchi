@@ -12,6 +12,8 @@ const moods = {
   hungryAndDirty: '(҂Ծ ‸ Ծ)',
   lonelyAndDirty: '(҂._ .)',
   hungryLonelyAndDirty: '(҂⊙_ ◎)',
+  sick: '(⩾﹏⩽)',
+  dead: '(X _ X)',
   sleeping: '(◡_◡)',
 };
 

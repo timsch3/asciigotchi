@@ -2,7 +2,7 @@ let allItems = new Set<string>(); // for resetting only asciigotchi local storag
 
 export const save = (name: string, value: number) => {
   localStorage.setItem(`asciigotchi-${name}`, String(value));
-  if (name === 'darkmode') return; // don't reset darkmode
+  if (name === 'darkmode') return; // don't reset darkmode setting
   allItems.add(`asciigotchi-${name}`);
 };
 

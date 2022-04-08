@@ -1,28 +1,30 @@
 import { FunctionComponent } from 'react';
-import { getNow, intervals } from '../lib/intervals';
+import { getNow, intervals, getIsDead } from '../lib/intervals';
 import moods from '../lib/moods';
 import { save } from '../lib/storage';
 
 interface ActionsMenuProps {
   mood: string;
+  lastHealthy: number;
   setBirthTime: (a: number) => void;
-  setAge: (a: number) => void;
   setMood: (a: string) => void;
   setJustReceived: (a: boolean) => void;
   setLastFed: (a: number) => void;
   setLastPetted: (a: number) => void;
   setLastCleaned: (a: number) => void;
+  setLastHealthy: (a: number) => void;
 }
 
 const ActionsMenu: FunctionComponent<ActionsMenuProps> = ({
   mood,
+  lastHealthy,
   setBirthTime,
-  setAge,
   setMood,
   setJustReceived,
   setLastFed,
   setLastPetted,
   setLastCleaned,
+  setLastHealthy,
 }) => {
   // hatching
   const handleHatch = () => {
@@ -31,9 +33,10 @@ const ActionsMenu: FunctionComponent<ActionsMenuProps> = ({
     document.getElementById('pet')!.style.animation = 'hatch 2s ease-in-out infinite';
     setBirthTime(getNow());
     save('birthTime', getNow());
-    setLastFed(getNow() - (intervals.hunger + 1));
-    setLastPetted(getNow() - (intervals.loneliness + 1));
-    setLastCleaned(getNow() - (intervals.dirtiness + 1));
+    setLastFed(getNow() - intervals.hunger / 2);
+    setLastPetted(getNow() - intervals.loneliness / 2);
+    setLastCleaned(getNow() - intervals.dirtiness / 2);
+    setLastHealthy(getNow() - intervals.health / 2);
     setJustReceived(true);
   };
   // actions
@@ -64,13 +67,17 @@ const ActionsMenu: FunctionComponent<ActionsMenuProps> = ({
       </div>
     );
   } else {
-    return (
-      <div className="actionsMenu">
-        <button onClick={handleAction(actions.FEED)}>Feed</button>
-        <button onClick={handleAction(actions.PET)}>Pet</button>
-        <button onClick={handleAction(actions.CLEAN)}>Clean</button>
-      </div>
-    );
+    if (!getIsDead(lastHealthy)) {
+      return (
+        <div className="actionsMenu">
+          <button onClick={handleAction(actions.FEED)}>Feed</button>
+          <button onClick={handleAction(actions.PET)}>Pet</button>
+          <button onClick={handleAction(actions.CLEAN)}>Clean</button>
+        </div>
+      );
+    } else {
+      return null;
+    }
   }
 };
 
