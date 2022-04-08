@@ -5,8 +5,12 @@ It gets hungry after five hours and takes longer to feel lonely and to need some
 
 Check it out here: https://timschilling.net/asciigotchi/
 
+## Implemented features
+
+- Dark mode ✔
+- UI showing needs ✔
+
 ## Possible future features
 
 - Sick state and dying after not caring for too long
-- Dark mode
 - Pet getting bigger the older it gets
