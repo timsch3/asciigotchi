@@ -24,6 +24,7 @@ const ActionsMenu: FunctionComponent<ActionsMenuProps> = ({
   setLastPetted,
   setLastCleaned,
 }) => {
+  // hatching
   const handleHatch = () => {
     if (mood === moods.hatching) return;
     setMood(moods.hatching);
@@ -35,6 +36,27 @@ const ActionsMenu: FunctionComponent<ActionsMenuProps> = ({
     setLastCleaned(getNow() - (intervals.dirtiness + 1));
     setJustReceived(true);
   };
+  // actions
+  enum actions {
+    FEED,
+    PET,
+    CLEAN,
+  }
+  const handleAction = (action: actions) => {
+    return (event: React.MouseEvent) => {
+      if (action === actions.FEED) {
+        setLastFed(getNow());
+        setMood(moods.fed);
+      } else if (action === actions.PET) {
+        setLastPetted(getNow());
+        setMood(moods.petted);
+      } else if (action === actions.CLEAN) {
+        setLastCleaned(getNow());
+        setMood(moods.cleaned);
+      }
+      setJustReceived(true);
+    };
+  };
   if (mood == moods.unborn || mood == moods.hatching) {
     return (
       <div className="actionsMenu">
@@ -44,33 +66,9 @@ const ActionsMenu: FunctionComponent<ActionsMenuProps> = ({
   } else {
     return (
       <div className="actionsMenu">
-        <button
-          onClick={() => {
-            setLastFed(getNow());
-            setMood(moods.fed);
-            setJustReceived(true);
-          }}
-        >
-          Feed
-        </button>
-        <button
-          onClick={() => {
-            setLastPetted(getNow());
-            setMood(moods.petted);
-            setJustReceived(true);
-          }}
-        >
-          Pet
-        </button>
-        <button
-          onClick={() => {
-            setLastCleaned(getNow());
-            setMood(moods.cleaned);
-            setJustReceived(true);
-          }}
-        >
-          Clean
-        </button>
+        <button onClick={handleAction(actions.FEED)}>Feed</button>
+        <button onClick={handleAction(actions.PET)}>Pet</button>
+        <button onClick={handleAction(actions.CLEAN)}>Clean</button>
       </div>
     );
   }

@@ -1,4 +1,4 @@
-import { FunctionComponent, useState, useEffect } from 'react';
+import React, { FunctionComponent, useState, useEffect } from 'react';
 import moods from '../lib/moods';
 import { reset, load, save } from '../lib/storage';
 import { getHunger, getLoneliness, getDirtiness } from '../lib/intervals';
@@ -25,7 +25,7 @@ const TopBar: FunctionComponent<TopBarProps> = ({
   // dark mode
   const [darkmodeIcon, setDarkmodeIcon] = useState(load('darkmode') === 1 ? '🌞' : '🌛' || '🌛');
   const handleDarkmodeSwitch = () => {
-    load('darkmode') === 1 ? setLightTheme() : setDarkTheme();
+    return (event: React.MouseEvent) => (load('darkmode') === 1 ? setLightTheme() : setDarkTheme());
   };
   const setLightTheme = () => {
     const r: HTMLElement = document.querySelector(':root')!;
@@ -61,11 +61,13 @@ const TopBar: FunctionComponent<TopBarProps> = ({
   }
   // reset pet
   const handleReset = () => {
-    if (window.confirm('Do you really want to reset your asciigotchi?')) {
-      setBirthTime(undefined);
-      setMood(moods.unborn);
-      reset();
-    }
+    return (event: React.MouseEvent) => {
+      if (window.confirm('Do you really want to reset your asciigotchi?')) {
+        setBirthTime(undefined);
+        setMood(moods.unborn);
+        reset();
+      }
+    };
   };
   if (mood == moods.unborn || mood == moods.hatching) {
     return <div id="topBar"></div>;
@@ -94,15 +96,10 @@ const TopBar: FunctionComponent<TopBarProps> = ({
             </tbody>
           </table>
         </span>
-        <button id="darkmodeSwitch" onClick={() => handleDarkmodeSwitch()}>
+        <button id="darkmodeSwitch" onClick={handleDarkmodeSwitch()}>
           {darkmodeIcon}
         </button>
-        <button
-          id="resetButton"
-          onClick={() => {
-            handleReset();
-          }}
-        >
+        <button id="resetButton" onClick={handleReset()}>
           RESET
         </button>
       </div>
