@@ -62,7 +62,7 @@ const TopBar: FunctionComponent<TopBarProps> = ({
   // reset pet
   const handleReset = () => {
     return (event: React.MouseEvent) => {
-      if (window.confirm('Do you really want to reset your asciigotchi?')) {
+      if (window.confirm('Are you sure you want to reset your asciigotchi?')) {
         setBirthTime(undefined);
         setMood(moods.unborn);
         reset();

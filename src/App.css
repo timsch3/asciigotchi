@@ -55,11 +55,20 @@ body {
   margin-top: 10vh;
   padding-bottom: 15px;
   font-size: 4.2rem;
-  animation: wobble 3s ease-in-out infinite;
   user-select: none;
   font-family: sans-serif;
   -webkit-filter: grayscale(100%); /* workaround for heart symbols rendering as emoji */
   filter: grayscale(100%);
+}
+
+.alive {
+  animation: wobble 3s ease-in-out infinite;
+}
+.sick {
+  animation: wobble 5s ease-in-out infinite;
+}
+.dead {
+  animation: none;
 }
 
 /* ============================================== */

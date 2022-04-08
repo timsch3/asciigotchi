@@ -3,7 +3,14 @@ import { useState, useEffect } from 'react';
 import ActionsMenu from './components/ActionsMenu';
 import Pet from './components/Pet';
 import moods from './lib/moods';
-import { getNow, getIsHungry, getIsLonely, getIsDirty } from './lib/intervals';
+import {
+  getNow,
+  getIsHungry,
+  getIsLonely,
+  getIsDirty,
+  getIsSick,
+  getIsDead,
+} from './lib/intervals';
 import { save, load } from './lib/storage';
 import { useElapsedTime } from 'use-elapsed-time';
 import TopBar from './components/TopBar';
@@ -17,6 +24,7 @@ function App() {
   const [lastFed, setLastFed] = useState(load('lastFed') || getNow());
   const [lastPetted, setLastPetted] = useState(load('lastPetted') || getNow());
   const [lastCleaned, setLastCleaned] = useState(load('lastCleaned') || getNow());
+  const [lastHealthy, setLastHealthy] = useState(load('lastHealthy') || getNow());
 
   // use to trigger useEffect every second
   const { elapsedTime } = useElapsedTime({
@@ -48,10 +56,15 @@ function App() {
     } else if (getIsDirty(lastCleaned)) {
       setMood(moods.dirty);
     }
+    // check if healthy
+    getIsSick(lastFed, lastPetted, lastCleaned) ? setMood(moods.sick) : setLastHealthy(getNow());
+
+    if (getIsDead(lastHealthy)) setMood(moods.dead);
     // save states
     save('lastFed', lastFed);
     save('lastPetted', lastPetted);
     save('lastCleaned', lastCleaned);
+    save('lastHealthy', lastHealthy);
   }, [elapsedTime]);
 
   return (
@@ -65,16 +78,17 @@ function App() {
         lastPetted={lastPetted}
         lastCleaned={lastCleaned}
       />
-      <Pet mood={mood} />
+      <Pet mood={mood} lastHealthy={lastHealthy} />
       <ActionsMenu
         mood={mood}
+        lastHealthy={lastHealthy}
         setBirthTime={setBirthTime}
-        setAge={setAge}
         setMood={setMood}
         setJustReceived={setJustReceived}
         setLastFed={setLastFed}
         setLastPetted={setLastPetted}
         setLastCleaned={setLastCleaned}
+        setLastHealthy={setLastHealthy}
       />
     </div>
   );
