@@ -5,9 +5,9 @@ import Pet from './components/Pet';
 import moods from './lib/moods';
 import {
   getNow,
-  getIsHungry,
-  getIsLonely,
-  getIsDirty,
+  Hunger,
+  Loneliness,
+  Dirtiness,
   getIsSick,
   getIsDead,
 } from './lib/intervals';
@@ -45,15 +45,15 @@ function App() {
     document.getElementById('pet')!.removeAttribute('style'); // reset hatching animation
     // set mood
     setMood(moods.happy);
-    if (getIsHungry(lastFed)) {
+    if (Hunger.needsFulfilment(lastFed)) {
       setMood(moods.hungry);
-      if (getIsLonely(lastPetted) && getIsDirty(lastFed)) setMood(moods.hungryLonelyAndDirty);
-      else if (getIsLonely(lastPetted)) setMood(moods.hungryAndLonely);
-      else if (getIsDirty(lastCleaned)) setMood(moods.hungryAndDirty);
-    } else if (getIsLonely(lastPetted)) {
+      if (Loneliness.needsFulfilment(lastPetted) && Dirtiness.needsFulfilment(lastFed)) setMood(moods.hungryLonelyAndDirty);
+      else if (Loneliness.needsFulfilment(lastPetted)) setMood(moods.hungryAndLonely);
+      else if (Dirtiness.needsFulfilment(lastCleaned)) setMood(moods.hungryAndDirty);
+    } else if (Loneliness.needsFulfilment(lastPetted)) {
       setMood(moods.lonely);
-      if (getIsDirty(lastCleaned)) setMood(moods.lonelyAndDirty);
-    } else if (getIsDirty(lastCleaned)) {
+      if (Dirtiness.needsFulfilment(lastCleaned)) setMood(moods.lonelyAndDirty);
+    } else if (Dirtiness.needsFulfilment(lastCleaned)) {
       setMood(moods.dirty);
     }
     // check if healthy

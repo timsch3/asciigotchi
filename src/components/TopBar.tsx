@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useState, useEffect } from 'react';
 import moods from '../lib/moods';
 import { reset, load, save } from '../lib/storage';
-import { getHunger, getLoneliness, getDirtiness } from '../lib/intervals';
+import { Hunger, Loneliness, Dirtiness } from '../lib/intervals';
 
 interface TopBarProps {
   setBirthTime: (a: number | undefined) => void;
@@ -48,15 +48,15 @@ const TopBar: FunctionComponent<TopBarProps> = ({
   }, []);
   // set needs levels for ui
   let hungerLevel = [];
-  for (let i = 0.0; i < getHunger(lastFed); i++) {
+  for (let i = 0.0; i < Hunger.getAmount(lastFed); i++) {
     hungerLevel.push('█');
   }
   let lonelinessLevel = [];
-  for (let i = 0.0; i < getLoneliness(lastPetted); i++) {
+  for (let i = 0.0; i < Loneliness.getAmount(lastPetted); i++) {
     lonelinessLevel.push('█');
   }
   let dirtinessLevel = [];
-  for (let i = 0.0; i < getDirtiness(lastCleaned); i++) {
+  for (let i = 0.0; i < Dirtiness.getAmount(lastCleaned); i++) {
     dirtinessLevel.push('█');
   }
   // reset pet
@@ -69,7 +69,7 @@ const TopBar: FunctionComponent<TopBarProps> = ({
       }
     };
   };
-  if (mood == moods.unborn || mood == moods.hatching) {
+  if (mood === moods.unborn || mood === moods.hatching) {
     return <div id="topBar"></div>;
   } else {
     return (

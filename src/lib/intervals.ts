@@ -10,35 +10,23 @@ export const getNow = () => {
   return Math.round(Date.now() / 1000);
 };
 
-export const getHunger = (lastFed: number): number => {
-  const value = Math.floor(((getNow() - lastFed) / intervals.hunger) * 5);
-  if (value <= 5) return value;
-  else return 5;
-};
+class Need {
+  getAmount(lastFulfilled: number): number {
+    const value = Math.floor(((getNow() - lastFulfilled) / this.interval) * 5);
+    if (value <= 5) return value;
+    else return 5;
+  }
+  needsFulfilment(lastFulfilled: number): boolean {
+    return getNow() - lastFulfilled > this.interval;
+  }
+  constructor(
+    public interval: number = interval
+    ) {}
+}
 
-export const getLoneliness = (lastPetted: number): number => {
-  const value = Math.floor(((getNow() - lastPetted) / intervals.loneliness) * 5);
-  if (value <= 5) return value;
-  else return 5;
-};
-
-export const getDirtiness = (lastCleaned: number): number => {
-  const value = Math.floor(((getNow() - lastCleaned) / intervals.dirtiness) * 5);
-  if (value <= 5) return value;
-  else return 5;
-};
-
-export const getIsHungry = (lastFed: number): boolean => {
-  return getNow() - lastFed > intervals.hunger;
-};
-
-export const getIsLonely = (lastPetted: number): boolean => {
-  return getNow() - lastPetted > intervals.loneliness;
-};
-
-export const getIsDirty = (lastCleaned: number): boolean => {
-  return getNow() - lastCleaned > intervals.dirtiness;
-};
+export const Hunger = new Need(intervals.hunger)
+export const Loneliness = new Need(intervals.loneliness)
+export const Dirtiness = new Need(intervals.dirtiness)
 
 export const getIsSick = (lastFed: number, lastPetted: number, lastCleaned: number): boolean => {
   if (
