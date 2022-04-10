@@ -11,6 +11,9 @@ Check it out here: https://timschilling.net/asciigotchi/
 - UI showing needs ✔
 - Sick state and dying after not caring for too long ✔
 
+## Known issues
+- Showing pet as dead on page load for up to a second
+
 ## Planned features
 
 - Pet getting bigger until adult
