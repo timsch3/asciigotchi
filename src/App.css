@@ -59,6 +59,7 @@ body {
   font-family: sans-serif;
   -webkit-filter: grayscale(100%); /* workaround for heart symbols rendering as emoji */
   filter: grayscale(100%);
+  white-space: nowrap;
 }
 
 .alive {
