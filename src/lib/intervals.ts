@@ -19,14 +19,12 @@ class Need {
   needsFulfilment(lastFulfilled: number): boolean {
     return getNow() - lastFulfilled > this.interval;
   }
-  constructor(
-    public interval: number = interval
-    ) {}
+  constructor(public interval: number) {}
 }
 
-export const Hunger = new Need(intervals.hunger)
-export const Loneliness = new Need(intervals.loneliness)
-export const Dirtiness = new Need(intervals.dirtiness)
+export const Hunger = new Need(intervals.hunger);
+export const Loneliness = new Need(intervals.loneliness);
+export const Dirtiness = new Need(intervals.dirtiness);
 
 export const getIsSick = (lastFed: number, lastPetted: number, lastCleaned: number): boolean => {
   if (

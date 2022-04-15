@@ -60,7 +60,7 @@ const ActionsMenu: FunctionComponent<ActionsMenuProps> = ({
       setJustReceived(true);
     };
   };
-  if (mood == moods.unborn || mood == moods.hatching) {
+  if (mood === moods.unborn || mood === moods.hatching) {
     return (
       <div className="actionsMenu">
         <button onClick={handleHatch}>Hatch</button>

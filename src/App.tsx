@@ -3,14 +3,7 @@ import { useState, useEffect } from 'react';
 import ActionsMenu from './components/ActionsMenu';
 import Pet from './components/Pet';
 import moods from './lib/moods';
-import {
-  getNow,
-  Hunger,
-  Loneliness,
-  Dirtiness,
-  getIsSick,
-  getIsDead,
-} from './lib/intervals';
+import { getNow, Hunger, Loneliness, Dirtiness, getIsSick, getIsDead } from './lib/intervals';
 import { save, load } from './lib/storage';
 import { useElapsedTime } from 'use-elapsed-time';
 import TopBar from './components/TopBar';
@@ -36,7 +29,7 @@ function App() {
     // check if already hatched
     if (birthTime === undefined) return;
     // track age
-    setAge(getNow() - birthTime);
+    if (mood !== moods.dead) setAge(getNow() - birthTime);
     // just reveived cooldown
     if (justReceived) {
       setJustReceived(false);
@@ -47,7 +40,8 @@ function App() {
     setMood(moods.happy);
     if (Hunger.needsFulfilment(lastFed)) {
       setMood(moods.hungry);
-      if (Loneliness.needsFulfilment(lastPetted) && Dirtiness.needsFulfilment(lastFed)) setMood(moods.hungryLonelyAndDirty);
+      if (Loneliness.needsFulfilment(lastPetted) && Dirtiness.needsFulfilment(lastFed))
+        setMood(moods.hungryLonelyAndDirty);
       else if (Loneliness.needsFulfilment(lastPetted)) setMood(moods.hungryAndLonely);
       else if (Dirtiness.needsFulfilment(lastCleaned)) setMood(moods.hungryAndDirty);
     } else if (Loneliness.needsFulfilment(lastPetted)) {
