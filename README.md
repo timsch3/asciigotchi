@@ -10,12 +10,13 @@ Check it out here: https://timschilling.net/asciigotchi/
 - Dark mode ✔
 - UI showing needs ✔
 - Sick state and dying after not caring for too long ✔
+- Improved UI to show the needs as a bar based on percentage ✔
 
 ## Known issues
+
 - Showing pet as dead on page load for up to a second
 
 ## Planned features
 
 - Pet getting bigger until adult
-- Improve UI to show current level and threshold of needs
-- Add need to sleep and couple with darkmode
+- Add need to sleep and maybe couple with darkmode
