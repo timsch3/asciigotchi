@@ -46,19 +46,6 @@ const TopBar: FunctionComponent<TopBarProps> = ({
   useEffect(() => {
     load('darkmode') === 1 ? setDarkTheme() : setLightTheme(); // initially load darkmode setting
   }, []);
-  // set needs levels for ui
-  let hungerLevel = [];
-  for (let i = 0.0; i < Hunger.getAmount(lastFed); i++) {
-    hungerLevel.push('█');
-  }
-  let lonelinessLevel = [];
-  for (let i = 0.0; i < Loneliness.getAmount(lastPetted); i++) {
-    lonelinessLevel.push('█');
-  }
-  let dirtinessLevel = [];
-  for (let i = 0.0; i < Dirtiness.getAmount(lastCleaned); i++) {
-    dirtinessLevel.push('█');
-  }
   // reset pet
   const handleReset = () => {
     return (event: React.MouseEvent) => {
@@ -83,15 +70,30 @@ const TopBar: FunctionComponent<TopBarProps> = ({
               </tr>
               <tr>
                 <th>Hunger:&nbsp;</th>
-                <td>{hungerLevel.join(' ')}</td>
+                <td>
+                  <div
+                    id="hungerIndicator"
+                    style={{ width: `${Hunger.getAmount(lastFed)}%` }}
+                  ></div>
+                </td>
               </tr>
               <tr>
                 <th>Loneliness:&nbsp;</th>
-                <td>{lonelinessLevel.join(' ')}</td>
+                <td>
+                  <div
+                    id="lonelinessIndicator"
+                    style={{ width: `${Loneliness.getAmount(lastPetted)}%` }}
+                  ></div>
+                </td>
               </tr>
               <tr>
                 <th>Dirtiness:&nbsp;</th>
-                <td>{dirtinessLevel.join(' ')}</td>
+                <td>
+                  <div
+                    id="dirtinessIndicator"
+                    style={{ width: `${Dirtiness.getAmount(lastCleaned)}%` }}
+                  ></div>
+                </td>
               </tr>
             </tbody>
           </table>

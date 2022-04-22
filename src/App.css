@@ -43,6 +43,13 @@ body {
   line-height: 1.1rem;
 }
 
+#hungerIndicator,
+#lonelinessIndicator,
+#dirtinessIndicator {
+  background-color: var(--mainClr);
+  height: 10px;
+}
+
 /* ============================================== Pet */
 
 .petContainer {

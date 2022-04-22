@@ -1,6 +1,6 @@
 export const intervals = {
   // change for testing
-  hunger: 18000, // 5 hours: 18000
+  hunger: 100, // 5 hours: 18000
   loneliness: 27000, // 7.5 hours: 27000
   dirtiness: 43200, // 12 hours: 43200
   health: 36000, // 10 hours: 36000
@@ -12,9 +12,9 @@ export const getNow = () => {
 
 class Need {
   getAmount(lastFulfilled: number): number {
-    const value = Math.floor(((getNow() - lastFulfilled) / this.interval) * 5);
-    if (value <= 5) return value;
-    else return 5;
+    const value = Math.floor(((getNow() - lastFulfilled) / this.interval) * 100);
+    if (value <= 100) return value;
+    else return 100;
   }
   needsFulfilment(lastFulfilled: number): boolean {
     return getNow() - lastFulfilled > this.interval;
