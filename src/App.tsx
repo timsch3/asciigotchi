@@ -35,7 +35,6 @@ function App() {
       setJustReceived(false);
       return;
     }
-    document.getElementById('pet')!.removeAttribute('style'); // reset hatching animation
     // set mood
     setMood(moods.happy);
     if (Hunger.needsFulfilment(lastFed)) {
@@ -53,7 +52,7 @@ function App() {
     // check if healthy
     getIsSick(lastFed, lastPetted, lastCleaned) ? setMood(moods.sick) : setLastHealthy(getNow());
 
-    if (getIsDead(lastHealthy)) setMood(moods.dead);
+    if (getIsDead(lastHealthy) || Math.round(age / 86400) > 365) setMood(moods.dead);
     // save states
     save('lastFed', lastFed);
     save('lastPetted', lastPetted);
@@ -72,7 +71,7 @@ function App() {
         lastPetted={lastPetted}
         lastCleaned={lastCleaned}
       />
-      <Pet mood={mood} lastHealthy={lastHealthy} />
+      <Pet mood={mood} age={age} lastHealthy={lastHealthy} />
       <ActionsMenu
         mood={mood}
         lastHealthy={lastHealthy}
