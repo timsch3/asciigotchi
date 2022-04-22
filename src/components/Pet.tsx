@@ -23,7 +23,7 @@ const Pet: FunctionComponent<PetProps> = ({ mood, age, lastHealthy }) => {
   else if (mood === moods.dead) className = 'dead';
   return (
     <div className="petContainer">
-      <div id="pet" className={className} style={{ fontSize: `${size}vmin` }}>
+      <div id="pet" className={className} style={{ fontSize: `min(7rem, ${size}vmin)` }}>
         {mood}
       </div>
     </div>
