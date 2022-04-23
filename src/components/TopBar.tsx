@@ -63,53 +63,28 @@ const TopBar: FunctionComponent<TopBarProps> = ({
     return (
       <div id="topBar">
         <span id="uiContainer">
-          <table cellSpacing={0}>
-            <tbody>
-              <tr>
-                <th>
-                  <IconHunger stroke="var(--mainClr)" />
-                  &nbsp;
-                </th>
-                <td>{(age / 86400).toFixed(1)}</td>
-              </tr>
-              <tr>
-                <th>
-                  <IconHunger stroke="var(--mainClr)" />
-                  &nbsp;
-                </th>
-                <td>
-                  <div
-                    id="hungerIndicator"
-                    style={{ width: `${Hunger.getAmount(lastFed)}%` }}
-                  ></div>
-                </td>
-              </tr>
-              <tr>
-                <th>
-                  <IconHunger stroke="var(--mainClr)" />
-                  &nbsp;
-                </th>
-                <td>
-                  <div
-                    id="lonelinessIndicator"
-                    style={{ width: `${Loneliness.getAmount(lastPetted)}%` }}
-                  ></div>
-                </td>
-              </tr>
-              <tr>
-                <th>
-                  <IconHunger stroke="var(--mainClr)" />
-                  &nbsp;
-                </th>
-                <td>
-                  <div
-                    id="dirtinessIndicator"
-                    style={{ width: `${Dirtiness.getAmount(lastCleaned)}%` }}
-                  ></div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="uiItem">
+            <IconHunger stroke="var(--mainClr)" />
+            <div>{(age / 86400).toFixed(1)}</div>
+          </div>
+          <div className="uiItem">
+            <IconHunger stroke="var(--mainClr)" />
+            <div id="hungerIndicator" style={{ width: `${Hunger.getAmount(lastFed)}%` }}></div>
+          </div>
+          <div className="uiItem">
+            <IconHunger stroke="var(--mainClr)" />
+            <div
+              id="lonelinessIndicator"
+              style={{ width: `${Loneliness.getAmount(lastPetted)}%` }}
+            ></div>
+          </div>
+          <div className="uiItem">
+            <IconHunger stroke="var(--mainClr)" />
+            <div
+              id="dirtinessIndicator"
+              style={{ width: `${Dirtiness.getAmount(lastCleaned)}%` }}
+            ></div>
+          </div>
         </span>
         <button id="darkmodeSwitch" onClick={handleDarkmodeSwitch()}>
           {darkmodeIcon}

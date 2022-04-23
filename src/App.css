@@ -44,9 +44,16 @@ body {
   min-width: 8rem;
 }
 
-#uiContainer svg {
+.uiItem {
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.uiItem svg {
   max-width: 1.5rem;
   max-height: 1.5rem;
+  margin-right: 0.5rem;
 }
 
 #hungerIndicator,
