@@ -2,6 +2,8 @@ import { FunctionComponent } from 'react';
 import { getNow, intervals, getIsDead } from '../lib/intervals';
 import moods from '../lib/moods';
 import { save } from '../lib/storage';
+import { ReactComponent as IconEgg } from './icons/egg.svg';
+import { ReactComponent as IconFood } from './icons/food.svg';
 
 interface ActionsMenuProps {
   mood: string;
@@ -62,16 +64,24 @@ const ActionsMenu: FunctionComponent<ActionsMenuProps> = ({
   if (mood === moods.unborn || mood === moods.hatching) {
     return (
       <div className="actionsMenu">
-        <button onClick={handleHatch}>Hatch</button>
+        <button onClick={handleHatch}>
+          <IconEgg />
+        </button>
       </div>
     );
   } else {
     if (!getIsDead(lastHealthy)) {
       return (
         <div className="actionsMenu">
-          <button onClick={handleAction(actions.FEED)}>Feed</button>
-          <button onClick={handleAction(actions.PET)}>Pet</button>
-          <button onClick={handleAction(actions.CLEAN)}>Clean</button>
+          <button onClick={handleAction(actions.FEED)}>
+            <IconFood />
+          </button>
+          <button onClick={handleAction(actions.PET)}>
+            <IconFood />
+          </button>
+          <button onClick={handleAction(actions.CLEAN)}>
+            <IconFood />
+          </button>
         </div>
       );
     } else {

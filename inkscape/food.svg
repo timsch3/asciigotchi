@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100mm"
+   height="100mm"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="food.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.7447717"
+     inkscape:cx="129.24327"
+     inkscape:cy="184.2648"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg5"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:object-paths="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-center="true"
+     inkscape:snap-global="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid1265" />
+  </sodipodi:namedview>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 7.9375,44.979167 c 28.255138,10.846027 56.476945,10.709352 84.666667,0 C 92.555737,64.937564 94.610031,81.41573 74.135762,81.875 H 23.864929 C 5.5365124,80.108499 9.0481268,63.049341 7.9375,44.979167 Z"
+     id="path2801"
+     sodipodi:nodetypes="ccccc" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 8.2,43.2 C 44.590661,35.362799 68.353905,36.715387 92,43.1"
+     id="path3421"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3.46897;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 28.930166,50.127109 c -6.186882,-1.800892 -0.427663,-7.723012 2.227393,-9.833375 2.655055,-2.110364 4.593808,-2.839867 7.795872,-3.782067 3.202065,-0.942201 7.351336,-1.540177 11.13696,-1.512828 3.422395,0.02473 6.782185,0.500366 10.023263,1.512828 3.241079,1.012462 6.341864,2.368419 8.909568,4.538481 2.567706,2.17006 8.072629,6.051954 2.227391,8.320547 -5.845235,2.268594 -13.988138,2.901668 -21.160222,3.025653 C 42.918308,52.520336 35.117049,51.928 28.930166,50.127109 Z"
+     id="path2131"
+     sodipodi:nodetypes="zzzszzzzz" />
+</svg>

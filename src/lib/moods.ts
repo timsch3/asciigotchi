@@ -1,6 +1,6 @@
 const moods = {
-  unborn: '0',
-  hatching: 'O',
+  unborn: 'O',
+  hatching: '0',
   happy: "('-')",
   hungry: "('.')",
   fed: "('O')",

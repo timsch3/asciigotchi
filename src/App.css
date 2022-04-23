@@ -56,16 +56,16 @@ button {
 }
 
 .uiItem svg {
-  max-width: 1.5rem;
-  max-height: 1.5rem;
-  margin-right: 0.5rem;
+  max-width: 1.4rem;
+  max-height: 1.4rem;
+  margin: 0.2rem 0.4rem 0.2rem 0;
 }
 
 #hungerIndicator,
 #lonelinessIndicator,
 #dirtinessIndicator {
   background-color: var(--mainClr);
-  height: 10px;
+  height: 0.7rem;
 }
 
 /* ============================================== Pet */

@@ -2,8 +2,12 @@ import React, { FunctionComponent, useState, useEffect } from 'react';
 import moods from '../lib/moods';
 import { reset, load, save } from '../lib/storage';
 import { Hunger, Loneliness, Dirtiness } from '../lib/intervals';
-import { ReactComponent as IconHunger } from './icons/hunger.svg';
+import { ReactComponent as IconNight } from './icons/night.svg';
+import { ReactComponent as IconDay } from './icons/day.svg';
 import { ReactComponent as IconReset } from './icons/reset.svg';
+import { ReactComponent as IconAge } from './icons/age.svg';
+import { ReactComponent as IconHunger } from './icons/hunger.svg';
+import { ReactComponent as IconLoneliness } from './icons/loneliness.svg';
 
 interface TopBarProps {
   setBirthTime: (a: number | undefined) => void;
@@ -25,7 +29,9 @@ const TopBar: FunctionComponent<TopBarProps> = ({
   lastPetted,
 }) => {
   // dark mode
-  const [darkmodeIcon, setDarkmodeIcon] = useState(load('darkmode') === 1 ? '🌞' : '🌛' || '🌛');
+  const [darkmodeIcon, setDarkmodeIcon] = useState(
+    load('darkmode') === 1 ? <IconDay /> : <IconNight /> || <IconNight />
+  );
   const handleDarkmodeSwitch = () => {
     return (event: React.MouseEvent) => (load('darkmode') === 1 ? setLightTheme() : setDarkTheme());
   };
@@ -34,7 +40,7 @@ const TopBar: FunctionComponent<TopBarProps> = ({
     r.style.setProperty('--mainClr', 'hsl(0, 0%, 10%');
     r.style.setProperty('--softClr', 'hsl(0, 0%, 85%');
     r.style.setProperty('--bgClr', 'hsl(0, 0%, 98%');
-    setDarkmodeIcon('🌛');
+    setDarkmodeIcon(<IconNight />);
     save('darkmode', 0);
   };
   const setDarkTheme = () => {
@@ -42,7 +48,7 @@ const TopBar: FunctionComponent<TopBarProps> = ({
     r.style.setProperty('--mainClr', 'hsl(0, 0%, 90%');
     r.style.setProperty('--softClr', 'hsl(0, 0%, 20%');
     r.style.setProperty('--bgClr', 'hsl(0, 0%, 2%');
-    setDarkmodeIcon('🌞');
+    setDarkmodeIcon(<IconDay stroke="var(--mainClr)" />);
     save('darkmode', 1);
   };
   useEffect(() => {
@@ -65,22 +71,22 @@ const TopBar: FunctionComponent<TopBarProps> = ({
       <div id="topBar">
         <span id="uiContainer">
           <div className="uiItem">
-            <IconHunger stroke="var(--mainClr)" />
+            <IconAge />
             <div>{(age / 86400).toFixed(1)}</div>
           </div>
           <div className="uiItem">
-            <IconHunger stroke="var(--mainClr)" />
+            <IconHunger />
             <div id="hungerIndicator" style={{ width: `${Hunger.getAmount(lastFed)}%` }}></div>
           </div>
           <div className="uiItem">
-            <IconHunger stroke="var(--mainClr)" />
+            <IconLoneliness />
             <div
               id="lonelinessIndicator"
               style={{ width: `${Loneliness.getAmount(lastPetted)}%` }}
             ></div>
           </div>
           <div className="uiItem">
-            <IconHunger stroke="var(--mainClr)" />
+            <IconHunger />
             <div
               id="dirtinessIndicator"
               style={{ width: `${Dirtiness.getAmount(lastCleaned)}%` }}
@@ -91,7 +97,7 @@ const TopBar: FunctionComponent<TopBarProps> = ({
           {darkmodeIcon}
         </button>
         <button id="resetButton" onClick={handleReset()}>
-          <IconReset stroke="var(--mainClr)" />
+          <IconReset />
         </button>
       </div>
     );
