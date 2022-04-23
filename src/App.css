@@ -41,6 +41,12 @@ body {
   border-right: 2px solid var(--softClr);
   border-bottom: 2px solid var(--softClr);
   line-height: 1.1rem;
+  min-width: 8rem;
+}
+
+#uiContainer svg {
+  max-width: 1.5rem;
+  max-height: 1.5rem;
 }
 
 #hungerIndicator,

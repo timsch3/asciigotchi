@@ -2,6 +2,7 @@ import React, { FunctionComponent, useState, useEffect } from 'react';
 import moods from '../lib/moods';
 import { reset, load, save } from '../lib/storage';
 import { Hunger, Loneliness, Dirtiness } from '../lib/intervals';
+import { ReactComponent as IconHunger } from './icons/hunger.svg';
 
 interface TopBarProps {
   setBirthTime: (a: number | undefined) => void;
@@ -65,11 +66,17 @@ const TopBar: FunctionComponent<TopBarProps> = ({
           <table cellSpacing={0}>
             <tbody>
               <tr>
-                <th>Age:&nbsp;</th>
-                <td>{(age / 86400).toFixed(1)} days&nbsp;</td>
+                <th>
+                  <IconHunger stroke="var(--mainClr)" />
+                  &nbsp;
+                </th>
+                <td>{(age / 86400).toFixed(1)}</td>
               </tr>
               <tr>
-                <th>Hunger:&nbsp;</th>
+                <th>
+                  <IconHunger stroke="var(--mainClr)" />
+                  &nbsp;
+                </th>
                 <td>
                   <div
                     id="hungerIndicator"
@@ -78,7 +85,10 @@ const TopBar: FunctionComponent<TopBarProps> = ({
                 </td>
               </tr>
               <tr>
-                <th>Loneliness:&nbsp;</th>
+                <th>
+                  <IconHunger stroke="var(--mainClr)" />
+                  &nbsp;
+                </th>
                 <td>
                   <div
                     id="lonelinessIndicator"
@@ -87,7 +97,10 @@ const TopBar: FunctionComponent<TopBarProps> = ({
                 </td>
               </tr>
               <tr>
-                <th>Dirtiness:&nbsp;</th>
+                <th>
+                  <IconHunger stroke="var(--mainClr)" />
+                  &nbsp;
+                </th>
                 <td>
                   <div
                     id="dirtinessIndicator"
