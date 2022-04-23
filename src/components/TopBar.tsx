@@ -3,6 +3,7 @@ import moods from '../lib/moods';
 import { reset, load, save } from '../lib/storage';
 import { Hunger, Loneliness, Dirtiness } from '../lib/intervals';
 import { ReactComponent as IconHunger } from './icons/hunger.svg';
+import { ReactComponent as IconReset } from './icons/reset.svg';
 
 interface TopBarProps {
   setBirthTime: (a: number | undefined) => void;
@@ -90,7 +91,7 @@ const TopBar: FunctionComponent<TopBarProps> = ({
           {darkmodeIcon}
         </button>
         <button id="resetButton" onClick={handleReset()}>
-          RESET
+          <IconReset stroke="var(--mainClr)" />
         </button>
       </div>
     );

@@ -15,6 +15,16 @@ body {
   background-color: var(--bgClr);
 }
 
+button {
+  display: flex;
+  padding: 5px;
+  margin-bottom: 0.5rem;
+  border-width: 4px;
+  border-radius: 1.75rem;
+  color: var(--mainClr);
+  background-color: var(--bgClr);
+}
+
 /* ==============================================  Top Bar */
 
 #topBar {
@@ -24,15 +34,10 @@ body {
   min-height: calc(4.8rem + 2px);
 }
 
-#resetButton,
-#darkmodeSwitch {
-  padding: 0.2rem 0.4rem;
-  font-size: 0.75rem;
-  border-width: 2px;
-  font-weight: bold;
-  min-width: auto;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
+#resetButton svg,
+#darkmodeSwitch svg {
+  max-width: 1.5rem;
+  max-height: 1.5rem;
 }
 
 #uiContainer {
@@ -92,23 +97,21 @@ body {
   animation: none;
 }
 
-/* ============================================== Buttons */
+/* ============================================== Actions Menu */
 
-button:not(:last-of-type) {
+.actionsMenu {
+  display: flex;
+  justify-content: center;
+}
+
+.actionsMenu button:not(:last-of-type) {
   margin-right: 0.75rem;
 }
 
-button {
-  padding: 0.5rem 0;
-  margin-bottom: 0.5rem;
-  font-size: 1.25rem;
-  border-width: 4px;
-  border-radius: 1.75rem;
-  color: var(--mainClr);
-  background-color: var(--bgClr);
-  user-select: none;
-  font-family: monospace;
-  min-width: 8ch;
+.actionsMenu svg,
+.actionsMenu svg {
+  max-width: 2rem;
+  max-height: 2rem;
 }
 
 /* ============================================== Animations */
