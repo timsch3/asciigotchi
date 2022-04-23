@@ -22,3 +22,4 @@ Check it out here: https://timschilling.net/asciigotchi/
 
 - Animations when fulfilling needs
 - Add need to sleep and couple with darkmode
+- Replace all text with symbols
