@@ -5,16 +5,16 @@ const moods = {
   hungry: "('.')",
   fed: "('O')",
   lonely: '(._.)',
-  petted: '(^~^)',
+  petted: "('*')",
   dirty: '(-~-)',
-  cleaned: '(*-*)',
+  cleaned: '(*v*)',
   hungryAndLonely: '(,_,)',
   hungryAndDirty: '(~_~)',
   lonelyAndDirty: '(;-;)',
   hungryLonelyAndDirty: '(>_<)',
   sick: '(/_\\)',
   dead: '(X_X)',
-  sleeping: '(-_-)',
+  sleeping: '(-.-)',
 };
 
 export default moods;
