@@ -4,6 +4,7 @@ import moods from '../lib/moods';
 import { save } from '../lib/storage';
 import { ReactComponent as IconEgg } from './icons/egg.svg';
 import { ReactComponent as IconFood } from './icons/food.svg';
+import { ReactComponent as IconPet } from './icons/pet.svg';
 
 interface ActionsMenuProps {
   mood: string;
@@ -77,7 +78,7 @@ const ActionsMenu: FunctionComponent<ActionsMenuProps> = ({
             <IconFood />
           </button>
           <button onClick={handleAction(actions.PET)}>
-            <IconFood />
+            <IconPet />
           </button>
           <button onClick={handleAction(actions.CLEAN)}>
             <IconFood />

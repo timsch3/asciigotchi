@@ -15,6 +15,16 @@ body {
   background-color: var(--bgClr);
 }
 
+@media (min-width: 400px) {
+  #root {
+    display: flex;
+    justify-content: center;
+  }
+  .App {
+    width: 400px;
+  }
+}
+
 button {
   display: flex;
   padding: 5px;
