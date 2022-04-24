@@ -8,6 +8,7 @@ import { ReactComponent as IconReset } from './icons/reset.svg';
 import { ReactComponent as IconAge } from './icons/age.svg';
 import { ReactComponent as IconHunger } from './icons/hunger.svg';
 import { ReactComponent as IconLoneliness } from './icons/loneliness.svg';
+import { ReactComponent as IconDirtiness } from './icons/dirtiness.svg';
 
 interface TopBarProps {
   setBirthTime: (a: number | undefined) => void;
@@ -86,7 +87,7 @@ const TopBar: FunctionComponent<TopBarProps> = ({
             ></div>
           </div>
           <div className="uiItem">
-            <IconHunger />
+            <IconDirtiness />
             <div
               id="dirtinessIndicator"
               style={{ width: `${Dirtiness.getAmount(lastCleaned)}%` }}

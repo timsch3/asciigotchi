@@ -1,11 +1,11 @@
 const moods = {
   unborn: 'O',
   hatching: '0',
-  happy: "('-')",
+  happy: '(^-^)',
   hungry: "('.')",
   fed: "('O')",
   lonely: '(._.)',
-  petted: '(^-^)',
+  petted: '(^~^)',
   dirty: '(-~-)',
   cleaned: '(*-*)',
   hungryAndLonely: '(,_,)',
