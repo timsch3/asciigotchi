@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/asciigotchi/static/css/main.149957cc.css",
+    "main.js": "/asciigotchi/static/js/main.05b75e20.js",
+    "static/media/dirtiness.svg": "/asciigotchi/static/media/dirtiness.4073470f08a0cfae5671f37ab2b4ae16.svg",
+    "static/media/clean.svg": "/asciigotchi/static/media/clean.d4d83ff678353d4c1fdc80cd010f4c79.svg",
+    "static/media/egg.svg": "/asciigotchi/static/media/egg.f66009613483509fa2f5296b57ee34d8.svg",
+    "static/media/age.svg": "/asciigotchi/static/media/age.0c60e34239971db83e572a9be9fa02f5.svg",
+    "static/media/pet.svg": "/asciigotchi/static/media/pet.f1218eaed088988f0729cd0163223c2f.svg",
+    "static/media/loneliness.svg": "/asciigotchi/static/media/loneliness.68108e4dda421cc5d5a0e2808969135d.svg",
+    "static/media/food.svg": "/asciigotchi/static/media/food.c4bded2610301ff64147a42bb463c609.svg",
+    "static/media/hunger.svg": "/asciigotchi/static/media/hunger.8a778a89a3efca07e5c03abb995fc4a9.svg",
+    "static/media/day.svg": "/asciigotchi/static/media/day.58b662866343e06ff7cec3ee681510f1.svg",
+    "index.html": "/asciigotchi/index.html",
+    "static/media/reset.svg": "/asciigotchi/static/media/reset.96ce74a08473bb6d6b2f99790d6611a4.svg",
+    "static/media/night.svg": "/asciigotchi/static/media/night.a2fefe4830ee157297593010de0d5f21.svg",
+    "main.149957cc.css.map": "/asciigotchi/static/css/main.149957cc.css.map",
+    "main.05b75e20.js.map": "/asciigotchi/static/js/main.05b75e20.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.149957cc.css",
+    "static/js/main.05b75e20.js"
+  ]
+}

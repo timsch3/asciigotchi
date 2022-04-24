@@ -1,0 +1,9 @@
+<svg width="100mm" height="100mm" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <clipPath id="clipPath956">
+   <path d="m15.013 60.051 14.406-13.951 8.3404 5.6108 8.0371-8.947 8.947 7.2789 11.07-9.2503 18.349 7.5822-1.2131 6.2174-12.89-5.3075-13.8 8.1888-8.7953-4.7009-7.8855 6.369-9.7052-4.8526-12.89 10.312z" display="none" fill="var(--mainClr)" stroke="var(--mainClr)" stroke-width=".26458px"/>
+   <path class="powerclip" d="m14.751-2.1569h70.194v104.31h-70.194zm0.26136 62.208 1.9714 4.5493 12.89-10.312 9.7052 4.8526 7.8855-6.369 8.7953 4.7009 13.8-8.1888 12.89 5.3075 1.2131-6.2174-18.349-7.5822-11.07 9.2503-8.947-7.2789-8.0371 8.947-8.3404-5.6108z" fill="var(--mainClr)" stroke="var(--mainClr)" stroke-width=".26458px"/>
+  </clipPath>
+ </defs>
+ <path d="m74.945 60.008c0 23.283-7.3996 32.148-24.945 32.148s-25.249-8.8658-25.249-32.148 14.982-52.165 25.249-52.165c9.8119 0 24.945 28.883 24.945 52.165z" clip-path="url(#clipPath956)" fill="var(--mainClr)" stroke="var(--mainClr)" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
+</svg>
