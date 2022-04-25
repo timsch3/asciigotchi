@@ -24,6 +24,7 @@ const Pet: FunctionComponent<PetProps> = ({ mood, age, lastHealthy }) => {
     <div className="petContainer">
       <div id="pet" className={className} style={{ fontSize: `${size}rem` }}>
         {mood}
+        <div id="petShadow" style={{ width: `${size}rem`, height: `${size / 10}rem` }}></div>
       </div>
     </div>
   );
