@@ -13,6 +13,7 @@ Check it out here: https://timschilling.net/asciigotchi/
 - Sick state and dying after not caring for too long ✔
 - Improved UI to show the needs as a bar based on the need level percentage ✔
 - Pet getting bigger until adult ✔
+- Made SVG icons instead of text for everything
 
 ## Known issues
 
@@ -22,4 +23,5 @@ Check it out here: https://timschilling.net/asciigotchi/
 
 - Animations when fulfilling needs
 - Add need to sleep and couple with darkmode
-- Replace all text with symbols
+- Couple life expectancy with quality of care
+- Info button that opens a modal showing everything important to know

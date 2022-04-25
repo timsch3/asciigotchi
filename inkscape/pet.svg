@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100mm"
+   height="100mm"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   sodipodi:docname="pet.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs9">
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect2206"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Füllregel Gerade-Ungerade im &lt;b&gt;Füllung und Kontur&lt;/b&gt;-Dialog verwenden, wenn das Anwenden des Ausschnitts mit nachfolgendem Umwandeln in Pfade kein Ergebnis bringt" />
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect1592"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Füllregel Gerade-Ungerade im &lt;b&gt;Füllung und Kontur&lt;/b&gt;-Dialog verwenden, wenn das Anwenden des Ausschnitts mit nachfolgendem Umwandeln in Pfade kein Ergebnis bringt" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1588">
+      <path
+         style="display:block;fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 7.9999999,59.999999 14.0000001,-16 17.999999,8 16,-12 14.000001,8 13.999999,-9.999998 12.000002,8 L 94,54 83.999999,46.000001 70,54 55.999999,47.999999 l -13.999998,12 L 24,51.999999 12,62 Z"
+         id="path1590" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath2202">
+      <path
+         id="lpe_path-effect2206"
+         style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         class="powerclip"
+         d="M -2.6426955,26.500004 H 101.49986 V 64.845019 H -2.6426955 Z M 31.999999,51.999999 h 2.000002 v -5.999998 l 4,-2.000002 15.999999,4 1.999999,-1.999998 -20,-6.000002 -5.999998,4 z" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.5191601"
+     inkscape:cx="105.65049"
+     inkscape:cy="259.02471"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg5"
+     inkscape:snap-global="false"
+     inkscape:snap-page="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid1451"
+       spacingx="2"
+       spacingy="2"
+       units="mm" />
+  </sodipodi:namedview>
+  <g
+     id="path1747"
+     clip-path="url(#clipPath2202)" />
+  <path
+     style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:5.62168;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 4.6116612,51.573952 18.239479,40.852055 c 4.700845,-2.810256 17.109848,-3.122391 24.158405,-4.063107 L 68.68672,46.860194 c 8.702194,-2.856041 26.979453,-9.91319 27.012489,-8.043154 -2.629979,6.421933 -4.238296,17.145089 -8.319104,18.114399 -8.252172,0.651051 -13.322837,1.341234 -19.052317,4.540713 -1.655588,1.730455 -7.630186,3.329395 -11.016569,-0.782746 -0.4267,-0.518149 -6.196705,-2.250308 -7.886196,-3.023406 -7.188074,-3.289209 -16.38542,-6.217969 -11.497816,-6.217969 7.960663,2.059277 16.24539,5.491311 22.370937,3.752955 V 50.57721 c -8.244082,-3.579921 -10.483223,-3.927325 -21.566108,-8.152995 -2.056063,-0.342579 -5.534919,0.01612 -7.534204,2.391461 -1.567799,1.862697 -1.632846,1.64663 -1.892232,2.824236 -2.605147,-0.560667 -5.201644,-2.169676 -8.420449,-2.169675 0.272413,-0.71873 0.182214,-0.789611 -2.369067,0.105866 -5.581552,1.959074 -15.7876881,10.859714 -13.9044228,5.997849 z"
+     id="path2657"
+     sodipodi:nodetypes="cccccccssccccsccsc" />
+</svg>

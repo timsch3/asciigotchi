@@ -2,6 +2,13 @@ import React, { FunctionComponent, useState, useEffect } from 'react';
 import moods from '../lib/moods';
 import { reset, load, save } from '../lib/storage';
 import { Hunger, Loneliness, Dirtiness } from '../lib/intervals';
+import { ReactComponent as IconNight } from './icons/night.svg';
+import { ReactComponent as IconDay } from './icons/day.svg';
+import { ReactComponent as IconReset } from './icons/reset.svg';
+import { ReactComponent as IconAge } from './icons/age.svg';
+import { ReactComponent as IconHunger } from './icons/hunger.svg';
+import { ReactComponent as IconLoneliness } from './icons/loneliness.svg';
+import { ReactComponent as IconDirtiness } from './icons/dirtiness.svg';
 
 interface TopBarProps {
   setBirthTime: (a: number | undefined) => void;
@@ -23,7 +30,9 @@ const TopBar: FunctionComponent<TopBarProps> = ({
   lastPetted,
 }) => {
   // dark mode
-  const [darkmodeIcon, setDarkmodeIcon] = useState(load('darkmode') === 1 ? '🌞' : '🌛' || '🌛');
+  const [darkmodeIcon, setDarkmodeIcon] = useState(
+    load('darkmode') === 1 ? <IconDay /> : <IconNight /> || <IconNight />
+  );
   const handleDarkmodeSwitch = () => {
     return (event: React.MouseEvent) => (load('darkmode') === 1 ? setLightTheme() : setDarkTheme());
   };
@@ -32,7 +41,7 @@ const TopBar: FunctionComponent<TopBarProps> = ({
     r.style.setProperty('--mainClr', 'hsl(0, 0%, 10%');
     r.style.setProperty('--softClr', 'hsl(0, 0%, 85%');
     r.style.setProperty('--bgClr', 'hsl(0, 0%, 98%');
-    setDarkmodeIcon('🌛');
+    setDarkmodeIcon(<IconNight />);
     save('darkmode', 0);
   };
   const setDarkTheme = () => {
@@ -40,7 +49,7 @@ const TopBar: FunctionComponent<TopBarProps> = ({
     r.style.setProperty('--mainClr', 'hsl(0, 0%, 90%');
     r.style.setProperty('--softClr', 'hsl(0, 0%, 20%');
     r.style.setProperty('--bgClr', 'hsl(0, 0%, 2%');
-    setDarkmodeIcon('🌞');
+    setDarkmodeIcon(<IconDay stroke="var(--mainClr)" />);
     save('darkmode', 1);
   };
   useEffect(() => {
@@ -62,47 +71,34 @@ const TopBar: FunctionComponent<TopBarProps> = ({
     return (
       <div id="topBar">
         <span id="uiContainer">
-          <table cellSpacing={0}>
-            <tbody>
-              <tr>
-                <th>Age:&nbsp;</th>
-                <td>{(age / 86400).toFixed(1)} days&nbsp;</td>
-              </tr>
-              <tr>
-                <th>Hunger:&nbsp;</th>
-                <td>
-                  <div
-                    id="hungerIndicator"
-                    style={{ width: `${Hunger.getAmount(lastFed)}%` }}
-                  ></div>
-                </td>
-              </tr>
-              <tr>
-                <th>Loneliness:&nbsp;</th>
-                <td>
-                  <div
-                    id="lonelinessIndicator"
-                    style={{ width: `${Loneliness.getAmount(lastPetted)}%` }}
-                  ></div>
-                </td>
-              </tr>
-              <tr>
-                <th>Dirtiness:&nbsp;</th>
-                <td>
-                  <div
-                    id="dirtinessIndicator"
-                    style={{ width: `${Dirtiness.getAmount(lastCleaned)}%` }}
-                  ></div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="uiItem">
+            <IconAge />
+            <div>{(age / 86400).toFixed(1)}</div>
+          </div>
+          <div className="uiItem">
+            <IconHunger />
+            <div id="hungerIndicator" style={{ width: `${Hunger.getAmount(lastFed)}%` }}></div>
+          </div>
+          <div className="uiItem">
+            <IconLoneliness />
+            <div
+              id="lonelinessIndicator"
+              style={{ width: `${Loneliness.getAmount(lastPetted)}%` }}
+            ></div>
+          </div>
+          <div className="uiItem">
+            <IconDirtiness />
+            <div
+              id="dirtinessIndicator"
+              style={{ width: `${Dirtiness.getAmount(lastCleaned)}%` }}
+            ></div>
+          </div>
         </span>
         <button id="darkmodeSwitch" onClick={handleDarkmodeSwitch()}>
           {darkmodeIcon}
         </button>
         <button id="resetButton" onClick={handleReset()}>
-          RESET
+          <IconReset />
         </button>
       </div>
     );

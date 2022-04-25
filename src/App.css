@@ -1,3 +1,5 @@
+/* ==============================================  Colors */
+
 :root {
   --mainClr: hsl(0, 0%, 10%);
   --softClr: hsl(0, 0%, 85%);
@@ -5,12 +7,48 @@
 }
 
 body {
-  background-color: var(--bgClr);
+  background-color: hsl(0, 0%, 12%);
 }
+
+/* ==============================================  Wrappers */
 
 .App {
   text-align: center;
   font-family: monospace;
+  color: var(--mainClr);
+  background-color: var(--bgClr);
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+@media (max-width: 400px) {
+  body {
+    display: block;
+    margin: 0;
+  }
+  .App {
+    border-radius: 0;
+  }
+}
+
+@media (min-width: 420px) {
+  body {
+    display: flex;
+    justify-content: center;
+  }
+  .App {
+    width: 400px;
+  }
+}
+
+/* ==============================================  Buttons */
+
+button {
+  display: flex;
+  padding: 0.25rem;
+  margin-bottom: 0.5rem;
+  border-width: 4px;
+  border-radius: 1.75rem;
   color: var(--mainClr);
   background-color: var(--bgClr);
 }
@@ -24,15 +62,10 @@ body {
   min-height: calc(4.8rem + 2px);
 }
 
-#resetButton,
-#darkmodeSwitch {
-  padding: 0.2rem 0.4rem;
-  font-size: 0.75rem;
-  border-width: 2px;
-  font-weight: bold;
-  min-width: auto;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
+#resetButton svg,
+#darkmodeSwitch svg {
+  max-width: 1.5rem;
+  max-height: 1.5rem;
 }
 
 #uiContainer {
@@ -40,14 +73,28 @@ body {
   text-align: left;
   border-right: 2px solid var(--softClr);
   border-bottom: 2px solid var(--softClr);
+  border-bottom-right-radius: 0.25rem;
   line-height: 1.1rem;
+  min-width: 8rem;
+}
+
+.uiItem {
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.uiItem svg {
+  max-width: 1.4rem;
+  max-height: 1.4rem;
+  margin: 0.2rem 0.4rem 0.2rem 0;
 }
 
 #hungerIndicator,
 #lonelinessIndicator,
 #dirtinessIndicator {
   background-color: var(--mainClr);
-  height: 10px;
+  height: 0.7rem;
 }
 
 /* ============================================== Pet */
@@ -56,14 +103,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 40vh;
+  min-height: 30vh;
 }
 
 #pet {
   margin-top: 10vh;
-  padding-bottom: 15px;
+  padding-bottom: 5vh;
   user-select: none;
-  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#petShadow {
+  margin-top: 5vh;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--softClr);
+  background-color: var(--softClr);
 }
 
 .hatching {
@@ -82,23 +138,21 @@ body {
   animation: jump 1s ease-in-out forwards;
 }
 
-/* ============================================== Buttons */
+/* ============================================== Actions Menu */
 
-button:not(:last-of-type) {
+.actionsMenu {
+  display: flex;
+  justify-content: center;
+}
+
+.actionsMenu button:not(:last-of-type) {
   margin-right: 0.75rem;
 }
 
-button {
-  padding: 0.5rem 0;
-  margin-bottom: 0.5rem;
-  font-size: 1.25rem;
-  border-width: 4px;
-  border-radius: 1.75rem;
-  color: var(--mainClr);
-  background-color: var(--bgClr);
-  user-select: none;
-  font-family: monospace;
-  min-width: 8ch;
+.actionsMenu svg,
+.actionsMenu svg {
+  max-width: 2rem;
+  max-height: 2rem;
 }
 
 /* ============================================== Animations */

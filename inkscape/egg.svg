@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100mm"
+   height="100mm"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="egg.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs9">
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect960"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Füllregel Gerade-Ungerade im &lt;b&gt;Füllung und Kontur&lt;/b&gt;-Dialog verwenden, wenn das Anwenden des Ausschnitts mit nachfolgendem Umwandeln in Pfade kein Ergebnis bringt" />
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect2227"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Füllregel Gerade-Ungerade im &lt;b&gt;Füllung und Kontur&lt;/b&gt;-Dialog verwenden, wenn das Anwenden des Ausschnitts mit nachfolgendem Umwandeln in Pfade kein Ergebnis bringt" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath2223">
+      <path
+         style="display:none;fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 13.496274,65.206716 14.102847,-14.406134 12.889701,6.06574 8.795325,-11.524906 13.79956,6.672312 9.401898,-13.496271 16.074215,5.307523"
+         id="path2225" />
+      <path
+         id="lpe_path-effect2227"
+         style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         class="powerclip"
+         d="M 14.751354,-2.1568985 H 84.945359 V 102.1569 H 14.751354 Z m 0.261355,62.2077345 1.971366,4.549307 12.889698,-10.31176 9.705187,4.852593 7.885464,-6.369028 8.795325,4.700949 13.79956,-8.18875 12.889701,5.307523 1.213144,-6.217386 -18.348862,-7.582175 -11.069979,9.250254 -8.946967,-7.278889 -8.037108,8.946968 -8.340394,-5.61081 z" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath956">
+      <path
+         style="display:none;fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 15.012709,60.050836 14.406135,-13.951204 8.340394,5.61081 8.037108,-8.946968 8.946967,7.278889 11.069979,-9.250254 18.348862,7.582175 -1.213144,6.217386 -12.889701,-5.307523 -13.79956,8.18875 -8.795325,-4.700949 -7.885464,6.369028 -9.705187,-4.852593 -12.889698,10.31176 z"
+         id="path958" />
+      <path
+         id="lpe_path-effect960"
+         style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         class="powerclip"
+         d="M 14.751354,-2.1568985 H 84.945359 V 102.1569 H 14.751354 Z m 0.261355,62.2077345 1.971366,4.549307 12.889698,-10.31176 9.705187,4.852593 7.885464,-6.369028 8.795325,4.700949 13.79956,-8.18875 12.889701,5.307523 1.213144,-6.217386 -18.348862,-7.582175 -11.069979,9.250254 -8.946967,-7.278889 -8.037108,8.946968 -8.340394,-5.61081 z" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="1.7447717"
+     inkscape:cx="203.17844"
+     inkscape:cy="180.25281"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg5"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:object-paths="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-center="true"
+     inkscape:snap-global="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid1265" />
+  </sodipodi:namedview>
+  <path
+     id="path933"
+     style="stroke:#000000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round"
+     d="m 74.945359,60.008473 c 0,23.282612 -7.399649,32.148425 -24.945359,32.148425 -17.54571,0 -25.248646,-8.865813 -25.248646,-32.148425 0,-23.282612 14.981825,-52.1653715 25.248646,-52.1653715 9.81189,0 24.945359,28.8827595 24.945359,52.1653715 z"
+     sodipodi:nodetypes="zszsz"
+     clip-path="url(#clipPath956)"
+     inkscape:path-effect="#path-effect2227;#path-effect960"
+     inkscape:original-d="m 74.945359,60.008473 c 0,23.282612 -7.399649,32.148425 -24.945359,32.148425 -17.54571,0 -25.248646,-8.865813 -25.248646,-32.148425 0,-23.282612 14.981825,-52.1653715 25.248646,-52.1653715 9.81189,0 24.945359,28.8827595 24.945359,52.1653715 z" />
+</svg>
