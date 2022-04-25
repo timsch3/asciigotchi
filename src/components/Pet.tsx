@@ -15,7 +15,8 @@ const Pet: FunctionComponent<PetProps> = ({ mood, age, lastHealthy }) => {
   else if (ageInDays >= 5 && ageInDays < 30) size = ageInDays * 0.2333;
   else size = 7;
   if (mood === moods.unborn || mood === moods.hatching) {
-    shadowStyle = { width: `${size / 3}rem`, height: `${size / 15}rem` };
+    size = 4;
+    shadowStyle = { width: `${size / 3}rem`, height: `${size / 20}rem` };
   } else {
     shadowStyle = { width: `${size}rem`, height: `${size / 10}rem` };
   }
@@ -23,7 +24,7 @@ const Pet: FunctionComponent<PetProps> = ({ mood, age, lastHealthy }) => {
   let className = 'alive';
   switch (mood) {
     case moods.unborn:
-      className = '';
+      className = ' ';
       break;
     case moods.hatching:
       className = 'hatching';
@@ -34,13 +35,22 @@ const Pet: FunctionComponent<PetProps> = ({ mood, age, lastHealthy }) => {
     case moods.dead:
       className = 'dead';
       break;
+    case moods.fed:
+      className = 'fed';
+      break;
+    case moods.petted:
+      className = 'petted';
+      break;
+    case moods.cleaned:
+      className = 'cleaned';
+      break;
   }
   return (
     <div className="petContainer">
       <div id="pet" className={className} style={{ fontSize: `${size}rem` }}>
         {mood}
-        <div id="petShadow" style={shadowStyle}></div>
       </div>
+      <div id="petShadow" style={shadowStyle}></div>
     </div>
   );
 };
