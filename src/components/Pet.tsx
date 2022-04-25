@@ -15,8 +15,7 @@ const Pet: FunctionComponent<PetProps> = ({ mood, age, lastHealthy }) => {
   else if (ageInDays >= 5 && ageInDays < 30) size = ageInDays * 0.2333;
   else size = 7;
   if (mood === moods.unborn || mood === moods.hatching) {
-    size = 4;
-    shadowStyle = { width: `${size / 3}rem`, height: `${size / 10}rem` };
+    shadowStyle = { width: `${size / 3}rem`, height: `${size / 15}rem` };
   } else {
     shadowStyle = { width: `${size}rem`, height: `${size / 10}rem` };
   }
