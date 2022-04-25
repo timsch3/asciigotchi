@@ -21,10 +21,20 @@ const Pet: FunctionComponent<PetProps> = ({ mood, age, lastHealthy }) => {
   }
   // set css class
   let className = 'alive';
-  if (mood === moods.unborn) className = '';
-  else if (mood === moods.hatching) className = 'hatching';
-  else if (mood === moods.sick) className = 'sick';
-  else if (mood === moods.dead) className = 'dead';
+  switch (mood) {
+    case moods.unborn:
+      className = '';
+      break;
+    case moods.hatching:
+      className = 'hatching';
+      break;
+    case moods.sick:
+      className = 'sick';
+      break;
+    case moods.dead:
+      className = 'dead';
+      break;
+  }
   return (
     <div className="petContainer">
       <div id="pet" className={className} style={{ fontSize: `${size}rem` }}>
