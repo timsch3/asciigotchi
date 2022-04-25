@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/asciigotchi/static/css/main.149957cc.css",
-    "main.js": "/asciigotchi/static/js/main.05b75e20.js",
-    "static/media/dirtiness.svg": "/asciigotchi/static/media/dirtiness.4073470f08a0cfae5671f37ab2b4ae16.svg",
+    "main.js": "/asciigotchi/static/js/main.76d32492.js",
+    "static/media/dirtiness.svg": "/asciigotchi/static/media/dirtiness.40d37519c4a151ec450b806706930126.svg",
     "static/media/clean.svg": "/asciigotchi/static/media/clean.d4d83ff678353d4c1fdc80cd010f4c79.svg",
     "static/media/egg.svg": "/asciigotchi/static/media/egg.f66009613483509fa2f5296b57ee34d8.svg",
     "static/media/age.svg": "/asciigotchi/static/media/age.0c60e34239971db83e572a9be9fa02f5.svg",
@@ -15,10 +15,10 @@
     "static/media/reset.svg": "/asciigotchi/static/media/reset.96ce74a08473bb6d6b2f99790d6611a4.svg",
     "static/media/night.svg": "/asciigotchi/static/media/night.a2fefe4830ee157297593010de0d5f21.svg",
     "main.149957cc.css.map": "/asciigotchi/static/css/main.149957cc.css.map",
-    "main.05b75e20.js.map": "/asciigotchi/static/js/main.05b75e20.js.map"
+    "main.76d32492.js.map": "/asciigotchi/static/js/main.76d32492.js.map"
   },
   "entrypoints": [
     "static/css/main.149957cc.css",
-    "static/js/main.05b75e20.js"
+    "static/js/main.76d32492.js"
   ]
 }

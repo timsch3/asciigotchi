@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: var(--bgClr);
+  background-color: hsl(0, 0%, 4%);
 }
 
 .App {
@@ -13,10 +13,22 @@ body {
   font-family: monospace;
   color: var(--mainClr);
   background-color: var(--bgClr);
+  padding: 0.25rem;
+  border-radius: 0.25rem;
 }
 
-@media (min-width: 400px) {
-  #root {
+@media (max-width: 400px) {
+  body {
+    display: block;
+    margin: 0;
+  }
+  .App {
+    border-radius: 0;
+  }
+}
+
+@media (min-width: 420px) {
+  body {
     display: flex;
     justify-content: center;
   }
@@ -27,7 +39,7 @@ body {
 
 button {
   display: flex;
-  padding: 5px;
+  padding: 0.25rem;
   margin-bottom: 0.5rem;
   border-width: 4px;
   border-radius: 1.75rem;
@@ -55,6 +67,7 @@ button {
   text-align: left;
   border-right: 2px solid var(--softClr);
   border-bottom: 2px solid var(--softClr);
+  border-bottom-right-radius: 0.25rem;
   line-height: 1.1rem;
   min-width: 8rem;
 }
@@ -84,14 +97,13 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 40vh;
+  min-height: 30vh;
 }
 
 #pet {
   margin-top: 10vh;
-  padding-bottom: 15px;
+  padding-bottom: 10vh;
   user-select: none;
-  white-space: nowrap;
 }
 
 .hatching {

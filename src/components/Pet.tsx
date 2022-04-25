@@ -11,10 +11,10 @@ const Pet: FunctionComponent<PetProps> = ({ mood, age, lastHealthy }) => {
   // set pet size according to age
   const ageInDays = Math.round(age / 86400);
   let size;
-  if (ageInDays < 5) size = 7;
-  else if (ageInDays >= 5 && ageInDays < 30) size = ageInDays * 1.1;
-  else size = 33;
-  if (mood === moods.unborn || mood === moods.hatching) size = 15;
+  if (ageInDays < 5) size = 2;
+  else if (ageInDays >= 5 && ageInDays < 30) size = ageInDays * 0.2333;
+  else size = 7;
+  if (mood === moods.unborn || mood === moods.hatching) size = 4;
   // set css class
   let className = 'alive';
   if (mood === moods.unborn) className = '';
@@ -23,7 +23,7 @@ const Pet: FunctionComponent<PetProps> = ({ mood, age, lastHealthy }) => {
   else if (mood === moods.dead) className = 'dead';
   return (
     <div className="petContainer">
-      <div id="pet" className={className} style={{ fontSize: `min(7rem, ${size}vmin)` }}>
+      <div id="pet" className={className} style={{ fontSize: `${size}rem` }}>
         {mood}
       </div>
     </div>
