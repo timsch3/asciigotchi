@@ -1,5 +1,4 @@
 import { FunctionComponent } from 'react';
-import { getIsDead } from '../lib/intervals';
 import moods from '../lib/moods';
 interface PetProps {
   mood: string;

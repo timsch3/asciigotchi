@@ -22,3 +22,4 @@ Check it out here: https://timschilling.net/asciigotchi/
 
 - Animations when fulfilling needs
 - Add need to sleep and couple with darkmode
+- Couple life expectancy with quality of care

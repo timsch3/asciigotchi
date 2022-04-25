@@ -49,9 +49,8 @@ function App() {
     } else if (Dirtiness.needsFulfilment(lastCleaned)) {
       setMood(moods.dirty);
     }
-    // check if healthy
+    // check if healthy or dead
     getIsSick(lastFed, lastPetted, lastCleaned) ? setMood(moods.sick) : setLastHealthy(getNow());
-
     if (getIsDead(lastHealthy) || Math.round(age / 86400) > 365) setMood(moods.dead);
     // save states
     save('lastFed', lastFed);
