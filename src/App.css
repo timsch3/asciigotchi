@@ -69,6 +69,9 @@ body {
   white-space: nowrap;
 }
 
+.hatching {
+  animation: hatch 2s ease-in-out infinite;
+}
 .alive {
   animation: wobble 3s ease-in-out infinite;
 }
@@ -77,6 +80,9 @@ body {
 }
 .dead {
   animation: none;
+}
+.happy {
+  animation: jump 1s ease-in-out forwards;
 }
 
 /* ============================================== Buttons */
@@ -109,6 +115,27 @@ button {
   }
   100% {
     transform: scale(1, 1);
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(-1rem);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-1rem);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(-1rem);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
