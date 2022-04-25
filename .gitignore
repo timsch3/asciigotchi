@@ -10,6 +10,7 @@
 
 # production
 /build
+/asciigotchi
 
 # misc
 .DS_Store
