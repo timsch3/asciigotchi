@@ -55,17 +55,14 @@ body {
 .petContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
   min-height: 40vh;
 }
 
 #pet {
   margin-top: 10vh;
   padding-bottom: 15px;
-  font-size: 4.2rem;
   user-select: none;
-  font-family: sans-serif;
-  -webkit-filter: grayscale(100%); /* workaround for heart symbols rendering as emoji */
-  filter: grayscale(100%);
   white-space: nowrap;
 }
 

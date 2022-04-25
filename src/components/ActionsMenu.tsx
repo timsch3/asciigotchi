@@ -30,7 +30,6 @@ const ActionsMenu: FunctionComponent<ActionsMenuProps> = ({
   const handleHatch = () => {
     if (mood === moods.hatching) return;
     setMood(moods.hatching);
-    document.getElementById('pet')!.style.animation = 'hatch 2s ease-in-out infinite';
     setBirthTime(getNow());
     save('birthTime', getNow());
     setLastFed(getNow() - intervals.hunger / 1.1);
