@@ -36,8 +36,8 @@ const ActionsMenu: FunctionComponent<ActionsMenuProps> = ({
     setMood(moods.hatching);
     setBirthTime(getNow());
     save('birthTime', getNow());
-    setLastFed(getNow() - intervals.hunger / 1.1);
-    setLastPetted(getNow() - intervals.loneliness / 1.1);
+    setLastFed(getNow() - intervals.hunger / 1.4);
+    setLastPetted(getNow() - intervals.loneliness / 1.8);
     setLastCleaned(getNow() - intervals.dirtiness / 1.1);
     setLastHealthy(getNow() - intervals.health / 1.1);
     setJustReceived(true);
