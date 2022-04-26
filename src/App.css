@@ -41,6 +41,12 @@ body {
   }
 }
 
+@media (max-width: 300px) {
+  :root {
+    font-size: 15px;
+  }
+}
+
 /* ==============================================  Buttons */
 
 button {
@@ -59,7 +65,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  min-height: calc(4.8rem + 2px);
+  min-height: 8rem;
 }
 
 #resetButton svg,
@@ -104,7 +110,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 30vh;
+  min-height: 40vh;
 }
 
 #pet {
@@ -114,6 +120,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  white-space: nowrap;
 }
 
 #petShadow {
