@@ -1,5 +1,5 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import ActionsMenu from './components/ActionsMenu';
 import Pet from './components/Pet';
 import moods from './lib/moods';
@@ -19,14 +19,11 @@ function App() {
   const [lastCleaned, setLastCleaned] = useState(load('lastCleaned') || getNow());
   const [lastHealthy, setLastHealthy] = useState(load('lastHealthy') || getNow());
 
-  const checkAndTrack = () => {
-    // check if already hatched
-    if (birthTime === undefined) return;
-    // track age
-    if (mood !== moods.dead) setAge(getNow() - birthTime);
-  };
+  const trackAge = useCallback(() => {
+    if (mood !== moods.dead) setAge(getNow() - birthTime!);
+  }, [mood, birthTime]);
 
-  const setCurrentMood = () => {
+  const setCurrentMood = useCallback(() => {
     // check if just interacted and animation still playing
     document.getElementById('pet')!.onanimationend = () => setJustReceived(false);
     if (justReceived) return;
@@ -47,14 +44,14 @@ function App() {
     // check if healthy or dead
     getIsSick(lastFed, lastPetted, lastCleaned) ? setMood(moods.sick) : setLastHealthy(getNow());
     if (getIsDead(lastHealthy) || Math.round(age / 86400) > 365) setMood(moods.dead);
-  };
+  }, [age, justReceived, lastCleaned, lastFed, lastHealthy, lastPetted]);
 
-  const saveStates = () => {
+  const saveStates = useCallback(() => {
     save('lastFed', lastFed);
     save('lastPetted', lastPetted);
     save('lastCleaned', lastCleaned);
     save('lastHealthy', lastHealthy);
-  };
+  }, [lastFed, lastPetted, lastCleaned, lastHealthy]);
 
   // use to trigger useEffect every second
   const { elapsedTime } = useElapsedTime({
@@ -63,10 +60,11 @@ function App() {
   });
 
   useEffect(() => {
-    checkAndTrack();
+    if (birthTime === undefined) return;
+    trackAge();
     setCurrentMood();
     saveStates();
-  }, [elapsedTime, checkAndTrack, setCurrentMood, saveStates]);
+  }, [elapsedTime, birthTime, trackAge, setCurrentMood, saveStates]);
 
   return (
     <div className="App">
