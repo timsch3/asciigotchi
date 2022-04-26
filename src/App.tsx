@@ -25,17 +25,14 @@ function App() {
     updateInterval: 1,
   });
 
-  useEffect(() => {
+  const checkAndTrack = () => {
     // check if already hatched
     if (birthTime === undefined) return;
     // track age
     if (mood !== moods.dead) setAge(getNow() - birthTime);
-    // just reveived cooldown
-    if (justReceived) {
-      setJustReceived(false);
-      return;
-    }
-    // set mood
+  };
+
+  const setCurrentMood = () => {
     setMood(moods.happy);
     if (Hunger.needsFulfilment(lastFed)) {
       setMood(moods.hungry);
@@ -52,12 +49,20 @@ function App() {
     // check if healthy or dead
     getIsSick(lastFed, lastPetted, lastCleaned) ? setMood(moods.sick) : setLastHealthy(getNow());
     if (getIsDead(lastHealthy) || Math.round(age / 86400) > 365) setMood(moods.dead);
-    // save states
+  };
+
+  const saveStates = () => {
     save('lastFed', lastFed);
     save('lastPetted', lastPetted);
     save('lastCleaned', lastCleaned);
     save('lastHealthy', lastHealthy);
-  }, [elapsedTime]);
+  };
+
+  useEffect(() => {
+    checkAndTrack();
+    setCurrentMood();
+    saveStates();
+  }, [elapsedTime, checkAndTrack, setCurrentMood, saveStates]);
 
   return (
     <div className="App">
