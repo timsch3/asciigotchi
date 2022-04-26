@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/asciigotchi/static/css/main.32779e93.css",
-    "main.js": "/asciigotchi/static/js/main.f25ad38d.js",
+    "main.css": "/asciigotchi/static/css/main.665db992.css",
+    "main.js": "/asciigotchi/static/js/main.c5cbb678.js",
+    "static/media/NotoSansMono_Condensed-Regular.ttf": "/asciigotchi/static/media/NotoSansMono_Condensed-Regular.d5f9e23be5bb451d177c.ttf",
     "static/media/dirtiness.svg": "/asciigotchi/static/media/dirtiness.40d37519c4a151ec450b806706930126.svg",
     "static/media/clean.svg": "/asciigotchi/static/media/clean.d4d83ff678353d4c1fdc80cd010f4c79.svg",
     "static/media/egg.svg": "/asciigotchi/static/media/egg.97a37c947a5046add8083c03db886d90.svg",
@@ -14,11 +15,11 @@
     "index.html": "/asciigotchi/index.html",
     "static/media/reset.svg": "/asciigotchi/static/media/reset.dfd47a80032a57c17558598f2af9dc52.svg",
     "static/media/night.svg": "/asciigotchi/static/media/night.92eba456bef3b131418c7ac1cf287323.svg",
-    "main.32779e93.css.map": "/asciigotchi/static/css/main.32779e93.css.map",
-    "main.f25ad38d.js.map": "/asciigotchi/static/js/main.f25ad38d.js.map"
+    "main.665db992.css.map": "/asciigotchi/static/css/main.665db992.css.map",
+    "main.c5cbb678.js.map": "/asciigotchi/static/js/main.c5cbb678.js.map"
   },
   "entrypoints": [
-    "static/css/main.32779e93.css",
-    "static/js/main.f25ad38d.js"
+    "static/css/main.665db992.css",
+    "static/js/main.c5cbb678.js"
   ]
 }
