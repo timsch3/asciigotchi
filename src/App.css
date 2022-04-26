@@ -1,3 +1,8 @@
+@font-face {
+  font-family: LatoMono;
+  src: url('./NotoSansMono_Condensed-Regular.ttf');
+}
+
 /* ==============================================  Colors */
 
 :root {
@@ -14,7 +19,7 @@ body {
 
 .App {
   text-align: center;
-  font-family: monospace;
+  font-family: LatoMono, monospace;
   color: var(--mainClr);
   background-color: var(--bgClr);
   padding: 0.25rem;
@@ -38,12 +43,6 @@ body {
   }
   .App {
     width: 400px;
-  }
-}
-
-@media (max-width: 300px) {
-  :root {
-    font-size: 15px;
   }
 }
 
