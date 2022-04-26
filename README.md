@@ -16,11 +16,6 @@ Check it out here: https://timschilling.net/asciigotchi/
 - Made SVG icons instead of text for everything ✔
 - Animations when fulfilling needs ✔
 
-## Known issues
-
-- Pet is sometimes falsely being shown as dead on page load for up to a second
-- Animations not ending consistently
-
 ## Possible future features
 
 - Add need to sleep and couple with darkmode

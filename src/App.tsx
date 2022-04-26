@@ -19,12 +19,6 @@ function App() {
   const [lastCleaned, setLastCleaned] = useState(load('lastCleaned') || getNow());
   const [lastHealthy, setLastHealthy] = useState(load('lastHealthy') || getNow());
 
-  // use to trigger useEffect every second
-  const { elapsedTime } = useElapsedTime({
-    isPlaying: true,
-    updateInterval: 1,
-  });
-
   const checkAndTrack = () => {
     // check if already hatched
     if (birthTime === undefined) return;
@@ -33,6 +27,10 @@ function App() {
   };
 
   const setCurrentMood = () => {
+    // check if just interacted and animation still playing
+    document.getElementById('pet')!.onanimationend = () => setJustReceived(false);
+    if (justReceived) return;
+    // set mood based on need levels
     setMood(moods.happy);
     if (Hunger.needsFulfilment(lastFed)) {
       setMood(moods.hungry);
@@ -57,6 +55,12 @@ function App() {
     save('lastCleaned', lastCleaned);
     save('lastHealthy', lastHealthy);
   };
+
+  // use to trigger useEffect every second
+  const { elapsedTime } = useElapsedTime({
+    isPlaying: true,
+    updateInterval: 1,
+  });
 
   useEffect(() => {
     checkAndTrack();
