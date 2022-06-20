@@ -13,6 +13,7 @@ interface ActionsMenuProps {
   setBirthTime: (a: number) => void;
   setMood: (a: string) => void;
   setJustReceived: (a: boolean) => void;
+  justReceived: boolean;
   setLastFed: (a: number) => void;
   setLastPetted: (a: number) => void;
   setLastCleaned: (a: number) => void;
@@ -25,6 +26,7 @@ const ActionsMenu: FunctionComponent<ActionsMenuProps> = ({
   setBirthTime,
   setMood,
   setJustReceived,
+  justReceived,
   setLastFed,
   setLastPetted,
   setLastCleaned,
@@ -50,6 +52,7 @@ const ActionsMenu: FunctionComponent<ActionsMenuProps> = ({
   }
   const handleAction = (action: actions) => {
     return (event: React.MouseEvent) => {
+      if (justReceived) return;
       if (action === actions.FEED) {
         setLastFed(getNow());
         setMood(moods.fed);

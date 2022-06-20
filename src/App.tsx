@@ -81,6 +81,7 @@ function App() {
         setBirthTime={setBirthTime}
         lastHealthy={lastHealthy}
         setJustReceived={setJustReceived}
+        justReceived={justReceived}
         setMood={setMood}
         setLastFed={setLastFed}
         setLastPetted={setLastPetted}
