@@ -52,7 +52,6 @@ const ActionsMenu: FunctionComponent<ActionsMenuProps> = ({
   }
   const handleAction = (action: actions) => {
     return (event: React.MouseEvent) => {
-      if (justReceived) return;
       if (action === actions.FEED) {
         setLastFed(getNow());
         setMood(moods.fed);
@@ -78,13 +77,13 @@ const ActionsMenu: FunctionComponent<ActionsMenuProps> = ({
     if (!getIsDead(lastHealthy)) {
       return (
         <div className="actionsMenu">
-          <button onClick={handleAction(actions.FEED)}>
+          <button disabled={justReceived} onClick={handleAction(actions.FEED)}>
             <IconFood />
           </button>
-          <button onClick={handleAction(actions.PET)}>
+          <button disabled={justReceived} onClick={handleAction(actions.PET)}>
             <IconPet />
           </button>
-          <button onClick={handleAction(actions.CLEAN)}>
+          <button disabled={justReceived} onClick={handleAction(actions.CLEAN)}>
             <IconClean />
           </button>
         </div>
