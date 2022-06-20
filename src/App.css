@@ -8,6 +8,8 @@
 :root {
   --mainClr: hsl(0, 0%, 10%);
   --softClr: hsl(0, 0%, 85%);
+  --borderClr: hsl(0, 0%, 70%);
+  --borderClr2: hsl(0, 0%, 60%);
   --bgClr: hsl(0, 0%, 98%);
 }
 
@@ -54,8 +56,12 @@ button {
   margin-bottom: 0.5rem;
   border-width: 4px;
   border-radius: 1.75rem;
+  border-color: var(--borderClr);
   color: var(--mainClr);
   background-color: var(--bgClr);
+}
+button:active {
+  border-color: var(--borderClr2);
 }
 
 /* ==============================================  Top Bar */
