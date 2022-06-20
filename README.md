@@ -15,9 +15,9 @@ Check it out here: https://timschilling.net/asciigotchi/
 - Pet getting bigger until adult ✔
 - Made SVG icons instead of text for everything ✔
 - Animations when fulfilling needs ✔
+- Need to sleep coupled with darkmode ✔
 
 ## Possible future features
 
-- Add need to sleep and couple with darkmode
 - Couple life expectancy with quality of care
 - Info button that opens a modal showing everything important to know

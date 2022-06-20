@@ -3,11 +3,18 @@ import moods from '../lib/moods';
 interface PetProps {
   mood: string;
   setJustReceived: (a: boolean) => void;
+  lightsOff: boolean;
   age: number;
   lastHealthy: number;
 }
 
-const Pet: FunctionComponent<PetProps> = ({ mood, setJustReceived, age, lastHealthy }) => {
+const Pet: FunctionComponent<PetProps> = ({
+  mood,
+  setJustReceived,
+  lightsOff,
+  age,
+  lastHealthy,
+}) => {
   // set justReceived based on animation end
   const pet = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -28,7 +35,7 @@ const Pet: FunctionComponent<PetProps> = ({ mood, setJustReceived, age, lastHeal
     shadowStyle = { width: `${size}rem`, height: `${size / 10}rem` };
   }
 
-  // set mood css class
+  // set css animations
   let className = 'alive';
   switch (mood) {
     case moods.unborn:
@@ -36,6 +43,9 @@ const Pet: FunctionComponent<PetProps> = ({ mood, setJustReceived, age, lastHeal
       break;
     case moods.hatching:
       className = 'hatching';
+      break;
+    case moods.sleeping:
+      className = 'sleeping';
       break;
     case moods.sick:
       className = 'sick';

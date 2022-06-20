@@ -101,9 +101,7 @@ button:active {
   margin: 0.2rem 0.4rem 0.2rem 0;
 }
 
-#hungerIndicator,
-#lonelinessIndicator,
-#dirtinessIndicator {
+.needIndicator {
   background-color: var(--mainClr);
   height: 0.7rem;
 }
@@ -139,6 +137,9 @@ button:active {
 }
 .alive {
   animation: wobble 3s ease-in-out infinite;
+}
+.sleeping {
+  animation: wobble 6s linear infinite;
 }
 .sick {
   animation: wobble 5s ease-in-out infinite;
