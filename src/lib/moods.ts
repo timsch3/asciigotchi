@@ -2,6 +2,7 @@ const moods = {
   unborn: 'O',
   hatching: '0',
   happy: '(^-^)',
+  sleeping: '(-.-)',
   hungry: "('.')",
   fed: "('o')",
   lonely: '(._.)',
@@ -12,9 +13,9 @@ const moods = {
   hungryAndDirty: '(~_~)',
   lonelyAndDirty: '(;-;)',
   hungryLonelyAndDirty: '(>_<)',
+  tired: '(u_u)',
   sick: '(/_\\)',
   dead: '(X_X)',
-  sleeping: '(-.-)',
 };
 
 export default moods;

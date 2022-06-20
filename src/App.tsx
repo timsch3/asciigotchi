@@ -3,7 +3,15 @@ import { useState, useEffect, useCallback } from 'react';
 import ActionsMenu from './components/ActionsMenu';
 import Pet from './components/Pet';
 import moods from './lib/moods';
-import { getNow, Hunger, Loneliness, Dirtiness, getIsSick, getIsDead } from './lib/intervals';
+import {
+  getNow,
+  Hunger,
+  Loneliness,
+  Dirtiness,
+  getIsSick,
+  getIsDead,
+  intervals,
+} from './lib/intervals';
 import { save, load } from './lib/storage';
 import { useElapsedTime } from 'use-elapsed-time';
 import TopBar from './components/TopBar';
@@ -12,6 +20,8 @@ function App() {
   const [birthTime, setBirthTime] = useState(load('birthTime'));
   const [age, setAge] = useState(0);
   const [mood, setMood] = useState(moods.unborn);
+  const [sleepiness, setSleepiness] = useState(0);
+  const [lightsOff, setLightsOff] = useState(false);
   const [justReceived, setJustReceived] = useState(false);
 
   const [lastFed, setLastFed] = useState(load('lastFed') || getNow());
@@ -33,14 +43,16 @@ function App() {
         setMood(moods.hungryLonelyAndDirty);
       else if (Loneliness.needsFulfilment(lastPetted)) setMood(moods.hungryAndLonely);
       else if (Dirtiness.needsFulfilment(lastCleaned)) setMood(moods.hungryAndDirty);
-    } else if (Loneliness.needsFulfilment(lastPetted)) {
+    } else if (sleepiness > intervals.sleepiness) setMood(moods.tired);
+    else if (Loneliness.needsFulfilment(lastPetted)) {
       setMood(moods.lonely);
       if (Dirtiness.needsFulfilment(lastCleaned)) setMood(moods.lonelyAndDirty);
     } else if (Dirtiness.needsFulfilment(lastCleaned)) {
       setMood(moods.dirty);
-    }
+    } else if (lightsOff) setMood(moods.sleeping);
     // check if healthy or dead
     getIsSick(lastFed, lastPetted, lastCleaned) ? setMood(moods.sick) : setLastHealthy(getNow());
+    sleepiness > intervals.sleepiness * 2 ? setMood(moods.sick) : setLastHealthy(getNow());
     if (getIsDead(lastHealthy) || Math.round(age / 86400) > 365) setMood(moods.dead);
   }, [age, justReceived, lastCleaned, lastFed, lastHealthy, lastPetted]);
 
@@ -49,6 +61,7 @@ function App() {
     save('lastPetted', lastPetted);
     save('lastCleaned', lastCleaned);
     save('lastHealthy', lastHealthy);
+    save('sleepiness', sleepiness);
   }, [lastFed, lastPetted, lastCleaned, lastHealthy]);
 
   // use to trigger useEffect every second
@@ -61,6 +74,7 @@ function App() {
     if (birthTime === undefined || getIsDead(lastHealthy)) return;
     trackAge();
     setCurrentMood();
+    lightsOff ? setSleepiness(sleepiness - 3) : setSleepiness(sleepiness + 1);
     saveStates();
   }, [elapsedTime, birthTime, lastHealthy, trackAge, setCurrentMood, saveStates]);
 
@@ -70,12 +84,20 @@ function App() {
         mood={mood}
         setBirthTime={setBirthTime}
         setMood={setMood}
+        setLightsOff={setLightsOff}
+        sleepiness={sleepiness}
         age={age}
         lastFed={lastFed}
         lastPetted={lastPetted}
         lastCleaned={lastCleaned}
       />
-      <Pet mood={mood} setJustReceived={setJustReceived} age={age} lastHealthy={lastHealthy} />
+      <Pet
+        mood={mood}
+        setJustReceived={setJustReceived}
+        lightsOff={lightsOff}
+        age={age}
+        lastHealthy={lastHealthy}
+      />
       <ActionsMenu
         mood={mood}
         setBirthTime={setBirthTime}

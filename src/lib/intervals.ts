@@ -4,6 +4,7 @@ export const intervals = {
   loneliness: 27000, // 7.5 hours: 27000
   dirtiness: 43200, // 12 hours: 43200
   health: 36000, // 10 hours: 36000
+  sleepiness: 57600, // 16 hours: 57600
 };
 
 export const getNow = () => {
@@ -12,6 +13,7 @@ export const getNow = () => {
 
 class Need {
   getAmount(lastFulfilled: number): number {
+    // convert to percentage
     const value = Math.floor(((getNow() - lastFulfilled) / this.interval) * 100);
     if (value <= 100) return value;
     else return 100;
@@ -30,7 +32,7 @@ export const getIsSick = (lastFed: number, lastPetted: number, lastCleaned: numb
   if (
     getNow() - lastFed > intervals.hunger * 5 ||
     getNow() - lastPetted > intervals.loneliness * 4 ||
-    getNow() - lastCleaned > intervals.dirtiness * 2
+    getNow() - lastCleaned > intervals.dirtiness * 2.5
   ) {
     return true;
   } else return false;
