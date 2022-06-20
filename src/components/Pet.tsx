@@ -1,12 +1,19 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useRef, useEffect } from 'react';
 import moods from '../lib/moods';
 interface PetProps {
   mood: string;
+  setJustReceived: (a: boolean) => void;
   age: number;
   lastHealthy: number;
 }
 
-const Pet: FunctionComponent<PetProps> = ({ mood, age, lastHealthy }) => {
+const Pet: FunctionComponent<PetProps> = ({ mood, setJustReceived, age, lastHealthy }) => {
+  // set justReceived based on animation end
+  const pet = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    pet.current!.onanimationend = () => setJustReceived(false);
+  });
+
   // set pet size according to age
   const ageInDays = Math.round(age / 86400);
   let size;
@@ -20,7 +27,8 @@ const Pet: FunctionComponent<PetProps> = ({ mood, age, lastHealthy }) => {
   } else {
     shadowStyle = { width: `${size}rem`, height: `${size / 10}rem` };
   }
-  // set css class
+
+  // set mood css class
   let className = 'alive';
   switch (mood) {
     case moods.unborn:
@@ -47,7 +55,7 @@ const Pet: FunctionComponent<PetProps> = ({ mood, age, lastHealthy }) => {
   }
   return (
     <div className="petContainer">
-      <div id="pet" className={className} style={{ fontSize: `${size}rem` }}>
+      <div ref={pet} id="pet" className={className} style={{ fontSize: `${size}rem` }}>
         {mood}
       </div>
       <div id="petShadow" style={shadowStyle}></div>

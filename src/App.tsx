@@ -24,8 +24,6 @@ function App() {
   }, [mood, birthTime]);
 
   const setCurrentMood = useCallback(() => {
-    // check if just interacted and animation still playing
-    document.getElementById('pet')!.onanimationend = () => setJustReceived(false);
     if (justReceived) return;
     // set mood based on need levels
     setMood(moods.happy);
@@ -60,11 +58,11 @@ function App() {
   });
 
   useEffect(() => {
-    if (birthTime === undefined) return;
+    if (birthTime === undefined || getIsDead(lastHealthy)) return;
     trackAge();
     setCurrentMood();
     saveStates();
-  }, [elapsedTime, birthTime, trackAge, setCurrentMood, saveStates]);
+  }, [elapsedTime, birthTime, lastHealthy, trackAge, setCurrentMood, saveStates]);
 
   return (
     <div className="App">
@@ -77,13 +75,13 @@ function App() {
         lastPetted={lastPetted}
         lastCleaned={lastCleaned}
       />
-      <Pet mood={mood} age={age} lastHealthy={lastHealthy} />
+      <Pet mood={mood} setJustReceived={setJustReceived} age={age} lastHealthy={lastHealthy} />
       <ActionsMenu
         mood={mood}
-        lastHealthy={lastHealthy}
         setBirthTime={setBirthTime}
-        setMood={setMood}
+        lastHealthy={lastHealthy}
         setJustReceived={setJustReceived}
+        setMood={setMood}
         setLastFed={setLastFed}
         setLastPetted={setLastPetted}
         setLastCleaned={setLastCleaned}
