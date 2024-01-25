@@ -22,4 +22,4 @@ Check it out here: https://timschilling.net/asciigotchi/
 - Couple life expectancy with quality of care
 - Info button that opens a modal showing everything important to know
 
-DISCLAIMER: I discontinued working on this and think there was a bug leading to the per dying. So not stable.
+DISCLAIMER: I discontinued working on this and think there was a bug leading to the pet dying. So not stable.
