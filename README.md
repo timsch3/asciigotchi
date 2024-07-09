@@ -1,3 +1,6 @@
+DISCLAIMER: I discontinued working on this and think there was a bug leading to the pet dying. So not stable.
+
+
 # asciigotchi
 
 An ASCII-style tamagotchi that lives in the local storage (browser data) of your device.
@@ -21,5 +24,3 @@ Check it out here: https://timschilling.net/asciigotchi/
 
 - Couple life expectancy with quality of care
 - Info button that opens a modal showing everything important to know
-
-DISCLAIMER: I discontinued working on this and think there was a bug leading to the pet dying. So not stable.
