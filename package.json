@@ -2,7 +2,6 @@
   "name": "asciigotchi",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://timschilling.net/asciigotchi",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
