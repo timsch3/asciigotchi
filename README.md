@@ -15,7 +15,7 @@ After 30 days it will be fully grown and live up to an age of 365 days if cared 
 - Animations when fulfilling needs ✔
 - Need to sleep coupled with darkmode ✔
 
-## Possible future features
+## Planned features
 
 - Couple life expectancy with quality of care
 - Info button that opens a modal showing everything important to know
