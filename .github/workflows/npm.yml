@@ -1,4 +1,4 @@
-name: NodeJS with Grunt
+name: NodeJS
 
 on:
   push:
@@ -24,4 +24,4 @@ jobs:
 
     - name: Build
       run: |
-        npm install
+        npm run build
