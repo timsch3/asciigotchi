@@ -1,13 +1,8 @@
-DISCLAIMER: I discontinued working on this and think there was a bug leading to the pet dying. So not stable.
-
-
 # asciigotchi
 
-An ASCII-style tamagotchi that lives in the local storage (browser data) of your device.
+An ASCII-style tamagotchi that lives in the local storage of your device.
 It gets hungry every 5 hours, needs to be petted every 7.5 hours and has to be cleaned every 12 hours, otherwise it will get sick and die after 10 more hours.
 After 30 days it will be fully grown and live up to an age of 365 days if cared for regularly.
-
-Check it out here: https://timschilling.net/asciigotchi/
 
 ## Implemented features
 
