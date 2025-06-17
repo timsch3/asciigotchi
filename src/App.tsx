@@ -54,7 +54,7 @@ function App() {
     getIsSick(lastFed, lastPetted, lastCleaned) ? setMood(moods.sick) : setLastHealthy(getNow());
     sleepiness > intervals.sleepiness * 2 ? setMood(moods.sick) : setLastHealthy(getNow());
     if (getIsDead(lastHealthy) || Math.round(age / 86400) > 365) setMood(moods.dead);
-  }, [age, justReceived, lastCleaned, lastFed, lastHealthy, lastPetted, lightsOff, sleepiness]);
+  }, [age, justReceived, lastCleaned, lastFed, lastHealthy, lastPetted]);
 
   const saveStates = useCallback(() => {
     save('lastFed', lastFed);
@@ -62,7 +62,7 @@ function App() {
     save('lastCleaned', lastCleaned);
     save('lastHealthy', lastHealthy);
     save('sleepiness', sleepiness);
-  }, [lastFed, lastPetted, lastCleaned, lastHealthy, sleepiness]);
+  }, [lastFed, lastPetted, lastCleaned, lastHealthy]);
 
   // use to trigger useEffect every second
   const { elapsedTime } = useElapsedTime({
@@ -76,7 +76,7 @@ function App() {
     setCurrentMood();
     lightsOff ? setSleepiness(sleepiness - 3) : setSleepiness(sleepiness + 1);
     saveStates();
-  }, [elapsedTime, birthTime, lastHealthy, trackAge, setCurrentMood, saveStates, sleepiness, lightsOff]);
+  }, [elapsedTime, birthTime, lastHealthy, trackAge, setCurrentMood, saveStates]);
 
   return (
     <div className="App">
