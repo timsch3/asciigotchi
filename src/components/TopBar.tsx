@@ -61,7 +61,7 @@ const TopBar: FunctionComponent<TopBarProps> = ({
   };
   useEffect(() => {
     load('darkmode') === 1 ? setDarkTheme() : setLightTheme(); // initially load darkmode setting
-  }, []);
+  });
   // reset pet
   const handleReset = () => {
     return (event: React.MouseEvent) => {
