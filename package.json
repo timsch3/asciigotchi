@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && rm -rf asciigotchi/inkscape && mv build asciigotchi",
+    "build": "react-scripts build && rm -rf asciigotchi/inkscape",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
