@@ -1,4 +1,4 @@
-name: Build
+name: Build and deploy
 on: [push]
 jobs:
   build:
@@ -13,3 +13,8 @@ jobs:
         run: npm install
       - name: Run build
         run: npm run build
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: build
+          clean: true
