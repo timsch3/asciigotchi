@@ -20,7 +20,7 @@ function App() {
   const [birthTime, setBirthTime] = useState(load('birthTime'));
   const [age, setAge] = useState(0);
   const [mood, setMood] = useState(moods.unborn);
-  const [sleepiness, setSleepiness] = useState(0);
+  const [sleepiness, setSleepiness] = useState(load('sleepiness') || 0);
   const [lightsOff, setLightsOff] = useState(false);
   const [justReceived, setJustReceived] = useState(false);
 
