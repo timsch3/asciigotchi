@@ -18,6 +18,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Verify build directory
+        run: |
+          ls -la build
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
