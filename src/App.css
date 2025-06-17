@@ -1,5 +1,5 @@
 @font-face {
-  font-family: LatoMono;
+  font-family: LatoMono, monospace;
   src: url('./NotoSansMono_Condensed-Regular.ttf');
 }
 
@@ -13,39 +13,26 @@
   --bgClr: hsl(0, 0%, 98%);
 }
 
+/* ==============================================  Wrappers */
+
 body {
   background-color: hsl(0, 0%, 12%);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-/* ==============================================  Wrappers */
 
 .App {
   text-align: center;
   font-family: LatoMono, monospace;
   color: var(--mainClr);
   background-color: var(--bgClr);
-  padding: 0.25rem;
+  padding: 0.5rem;
   border-radius: 0.25rem;
-}
-
-@media (max-width: 400px) {
-  body {
-    display: block;
-    margin: 0;
-  }
-  .App {
-    border-radius: 0;
-  }
-}
-
-@media (min-width: 420px) {
-  body {
-    display: flex;
-    justify-content: center;
-  }
-  .App {
-    width: 400px;
-  }
+  width: calc(100vw - 2rem);
+  max-width: 400px;
 }
 
 /* ==============================================  Buttons */
@@ -53,7 +40,6 @@ body {
 button {
   display: flex;
   padding: 0.25rem;
-  margin-bottom: 0.5rem;
   border-width: 4px;
   border-radius: 1.75rem;
   border-color: var(--borderClr);
@@ -113,12 +99,11 @@ button:active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 40vh;
+  margin-block: 100px;
 }
 
 #pet {
-  margin-top: 10vh;
-  padding-bottom: 5vh;
+  padding-bottom: 30px;
   user-select: none;
   display: flex;
   flex-direction: column;
@@ -127,7 +112,6 @@ button:active {
 }
 
 #petShadow {
-  margin-bottom: 5vh;
   border-radius: 50%;
   background-color: var(--softClr);
 }
