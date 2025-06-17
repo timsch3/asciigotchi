@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/asciigotchi/static/css/main.d3838864.css",
-    "main.js": "/asciigotchi/static/js/main.f114768f.js",
+    "main.js": "/asciigotchi/static/js/main.831e2df4.js",
     "static/media/NotoSansMono_Condensed-Regular.ttf": "/asciigotchi/static/media/NotoSansMono_Condensed-Regular.d5f9e23be5bb451d177c.ttf",
     "static/media/dirtiness.svg": "/asciigotchi/static/media/dirtiness.40d37519c4a151ec450b806706930126.svg",
     "static/media/clean.svg": "/asciigotchi/static/media/clean.d4d83ff678353d4c1fdc80cd010f4c79.svg",
@@ -17,10 +17,10 @@
     "static/media/reset.svg": "/asciigotchi/static/media/reset.dfd47a80032a57c17558598f2af9dc52.svg",
     "static/media/night.svg": "/asciigotchi/static/media/night.92eba456bef3b131418c7ac1cf287323.svg",
     "main.d3838864.css.map": "/asciigotchi/static/css/main.d3838864.css.map",
-    "main.f114768f.js.map": "/asciigotchi/static/js/main.f114768f.js.map"
+    "main.831e2df4.js.map": "/asciigotchi/static/js/main.831e2df4.js.map"
   },
   "entrypoints": [
     "static/css/main.d3838864.css",
-    "static/js/main.f114768f.js"
+    "static/js/main.831e2df4.js"
   ]
 }
