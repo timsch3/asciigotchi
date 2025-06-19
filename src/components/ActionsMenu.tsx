@@ -2,10 +2,10 @@ import { FunctionComponent } from 'react';
 import { getNow, intervals, getIsDead } from '../lib/intervals';
 import moods from '../lib/moods';
 import { save } from '../lib/storage';
-import { ReactComponent as IconEgg } from './icons/egg.svg';
-import { ReactComponent as IconFood } from './icons/food.svg';
-import { ReactComponent as IconPet } from './icons/pet.svg';
-import { ReactComponent as IconClean } from './icons/clean.svg';
+import IconEgg from './icons/egg.svg?react';
+import IconFood from './icons/food.svg?react';
+import IconPet from './icons/pet.svg?react';
+import IconClean from './icons/clean.svg?react';
 
 interface ActionsMenuProps {
   mood: string;

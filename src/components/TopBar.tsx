@@ -2,14 +2,14 @@ import React, { FunctionComponent, useState, useEffect } from 'react';
 import moods from '../lib/moods';
 import { reset, load, save } from '../lib/storage';
 import { Hunger, Loneliness, Dirtiness, intervals } from '../lib/intervals';
-import { ReactComponent as IconNight } from './icons/night.svg';
-import { ReactComponent as IconDay } from './icons/day.svg';
-import { ReactComponent as IconReset } from './icons/reset.svg';
-import { ReactComponent as IconAge } from './icons/age.svg';
-import { ReactComponent as IconHunger } from './icons/hunger.svg';
-import { ReactComponent as IconLoneliness } from './icons/loneliness.svg';
-import { ReactComponent as IconDirtiness } from './icons/dirtiness.svg';
-import { ReactComponent as IconSleepiness } from './icons/sleepiness.svg';
+import IconNight from './icons/night.svg?react';
+import IconDay from './icons/day.svg?react';
+import IconReset from './icons/reset.svg?react';
+import IconAge from './icons/age.svg?react';
+import IconHunger from './icons/hunger.svg?react';
+import IconLoneliness from './icons/loneliness.svg?react';
+import IconDirtiness from './icons/dirtiness.svg?react';
+import IconSleepiness from './icons/sleepiness.svg?react';
 
 interface TopBarProps {
   setBirthTime: (a: number | undefined) => void;
